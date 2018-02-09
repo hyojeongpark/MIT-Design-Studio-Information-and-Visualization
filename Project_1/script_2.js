@@ -8,6 +8,8 @@ var ctx2 = canvas2.getContext('2d');
 function myCircle() {
     var centerX = canvas2.width / 2;
     var centerY = canvas2.height / 2;
+
+    ctx2.translate(centerX, centerY);
     var radius = 0.35 * (canvas2.width);
 
     ctx2.strokeStyle = "#0079e0";
@@ -15,7 +17,7 @@ function myCircle() {
 
     ctx2.beginPath();
     ctx2.arc(0, 0, radius, 0, 2 * Math.PI);
-    ctx2.closePath;
+    ctx2.closePath();
 
     ctx2.stroke();
 }
