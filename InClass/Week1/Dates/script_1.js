@@ -1,7 +1,9 @@
 //Select #date and write the current date
 // write it in an standard format
 
-
+var today = new Date();
+console.log(today);
+$('#date').text(today);
 
 
 
