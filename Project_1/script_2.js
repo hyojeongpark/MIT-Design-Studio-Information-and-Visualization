@@ -103,6 +103,24 @@ function toHumanLang(num) {
     } else if (num == 10) {
         str = str + "ten";
         return str;
+    } else if (num == 11) {
+        return "eleven";
+    } else if (num == 12) {
+        return "twelve";
+    } else if (num == 13) {
+        return "one";
+    } else if (num == 14) {
+        return "two";
+    } else if (num == 15) {
+        return "three";
+    } else if (num == 16) {
+        return "four";
+    } else if (num == 17) {
+        return "five";
+    } else if (num == 18) {
+        return "six";
+    } else if (num == 19) {
+        return "seven";
     } else if (num >= 20 && num < 30) {
         str = "twenty";
         toHumanLang(num % 10);
@@ -133,7 +151,7 @@ function clock2() {
     var minutes = currentDate.getMinutes();
     var seconds = currentDate.getSeconds();
 
-//    console.log(seconds);
+    //    console.log(seconds);
 
     if (seconds < 20) {
         if (minutes < 20) {
