@@ -1,10 +1,17 @@
 body {
     padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
     display: block;
     width: 100%;
+}
+
+.description {
+    display: inline-block;
+    width: 45%;
 }
 
 #plot1,
@@ -23,15 +30,15 @@ h2 {
 #plot1 {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    font-size: 33em;
-    font-weight: 700;
-    line-height: 1em;
+    font-size: 22em;
+    font-weight: 600;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    letter-spacing: -0.04em;
 }
 
 #plot1 span {

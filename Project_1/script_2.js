@@ -4,7 +4,7 @@ var str = "";
 
 function smaller20(num) {
     if (num == 0) {
-        return " ";
+        return "zero";
     } else if (num == 1) {
         return "one";
     } else if (num == 2) {
