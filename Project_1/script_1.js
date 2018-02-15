@@ -3,7 +3,6 @@ var canvas1 = d3.select('#plot1').append('canvas').node();
 var str = "";
 
 function addHour(currentDate) {
-    // select #time and write the current time
     var hour = currentDate.getHours();
     if (hour > 12) {
         hour = hour - 12;
@@ -12,24 +11,17 @@ function addHour(currentDate) {
 }
 
 function addFill(currentDate, hour) {
-    //    fillShape = '<div id="fill">' + hour + '</div>'
     fillShape = '<div id="fill"><span class="minute">' + minute(currentDate) + '</span></div>';
     return fillShape;
 }
 
 function setHeight(currentDate) {
     var minutes = currentDate.getMinutes();
-console.log(minutes);
+    console.log(minutes);
     var strokeHeight = document.getElementById('stroke').clientHeight;
 
-    //    console.log(strokeHeight);
+    document.getElementById("fill").style.height = (minutes / 60 * 100) + '%';
 
-    //    var top = (minutes / 60 * strokeHeight);
-    //
-    document.getElementById("fill").style.height = (minutes/60*100) + '%';
-    //
-    //    document.getElementById("fill").style.bottom = top + "px";
-    //    console.log(top);
 }
 
 function minute(currentDate) {
@@ -47,5 +39,4 @@ function clock1() {
     setHeight(currentDate);
 }
 
-clock1();
-//setInterval(clock1, 1000);
+setInterval(clock1, 1000);
