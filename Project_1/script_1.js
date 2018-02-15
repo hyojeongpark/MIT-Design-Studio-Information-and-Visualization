@@ -45,5 +45,4 @@ function clock1() {
     setHeight(currentDate);
 }
 
-clock1()
-//setInterval(clock1, 1000);
+setInterval(clock1, 1000);
