@@ -130,19 +130,23 @@ function clock2() {
 
     //    console.log(seconds);
 
+    if (hour>12) {
+        hour = hour-12;
+    }
+
     if (seconds < 20) {
         if (minutes < 20) {
-            var currentHour = "" + toHumanLang(hour) + "<br>" + smaller20(minutes) + "<br>" + smaller20(seconds);
+            var currentHour = "" + smaller20(hour) + "<br>" + smaller20(minutes) + "<br>" + smaller20(seconds);
         } else {
-            var currentHour = "" + toHumanLang(hour) + "<br>" + toHumanLang(minutes) + "<br>" + smaller20(seconds);
+            var currentHour = "" + smaller20(hour) + "<br>" + toHumanLang(minutes) + "<br>" + smaller20(seconds);
         }
 
     } else {
         if (minutes < 20) {
-            var currentHour = "" + toHumanLang(hour) + "<br>" + smaller20(minutes) + "<br>" + toHumanLang(seconds);
+            var currentHour = "" + smaller20(hour) + "<br>" + smaller20(minutes) + "<br>" + toHumanLang(seconds);
 
         } else {
-            var currentHour = "" + toHumanLang(hour) + "<br>" + toHumanLang(minutes) + "<br>" + toHumanLang(seconds);
+            var currentHour = "" + smaller20(hour) + "<br>" + toHumanLang(minutes) + "<br>" + toHumanLang(seconds);
         }
     }
 
