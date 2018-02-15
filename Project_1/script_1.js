@@ -10,6 +10,12 @@ function addHour(currentDate) {
     return hour;
 }
 
+function setFontSize (hour) {
+    if (hour < 10) {
+        document.getElementById("stroke").style.fontSize = '550px';
+    }
+}
+
 function addFill(currentDate, hour) {
     fillShape = '<div id="fill"><span class="minute">' + minute(currentDate) + '</span></div>';
     return fillShape;
@@ -21,7 +27,6 @@ function setHeight(currentDate) {
     var strokeHeight = document.getElementById('stroke').clientHeight;
 
     document.getElementById("fill").style.height = (minutes / 60 * 100) + '%';
-
 }
 
 function minute(currentDate) {
@@ -36,7 +41,9 @@ function clock1() {
 
     document.getElementById("plot1").innerHTML = '<div id="stroke">' + hour + '</div>' + addFill(currentDate, hour);
 
+    setFontSize(hour);
     setHeight(currentDate);
 }
 
-setInterval(clock1, 1000);
+clock1()
+//setInterval(clock1, 1000);
