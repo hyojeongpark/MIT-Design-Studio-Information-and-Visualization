@@ -20,9 +20,11 @@ var mobile1 = d3.select('#mobile1')
 d3.json("data/boston_weather.json", draw);
 //d3.json("https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083", draw);
 
-var $todayTemp = d3.select('.todayTemp')
+var $todayTemp = d3.select('.todayTemp');
 
 function draw(error, data) {
+    d3.select('#todayDate').text(dayFormat(new Date()));
+
     var todayTemp = data.currently.temperature;
     console.log(todayTemp);
 
@@ -43,4 +45,13 @@ function draw(error, data) {
     function farToCelc(fahrenheit) {
         return (parseFloat(fahrenheit) - 32) * 0.5556;
     }
+}
+
+var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function dayFormat(day) {
+    s = weekday[day.getDay()] +', ' + monthNames[day.getMonth()] + ' ' + day.getDate();
+    return s;
 }
