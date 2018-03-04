@@ -4,13 +4,8 @@ body {
 
 #mobile1,
 #mobile2 {
-<<<<<<< HEAD
-    width: 414px;
-    height: 736px;
-=======
     width: 375px;
     height: 812px;
->>>>>>> project-2
     border: 1px solid;
     float: left;
     margin-left: auto;
@@ -19,12 +14,6 @@ body {
     overflow: scroll;
 }
 
-<<<<<<< HEAD
-#mobile1 img,
-#mobile2 img {
-    width: 100%;
-
-=======
 #mobile1 {
     color: #fff;
     background: linear-gradient(to bottom, #4D2BFF, #56CEFF);
@@ -91,5 +80,4 @@ body {
 #mobile1 img,
 #mobile2 img {
     height: 100%;
->>>>>>> project-2
 }
