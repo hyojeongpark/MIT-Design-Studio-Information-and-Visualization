@@ -59,9 +59,17 @@ body {
     display: none;
 }
 
+.sketches img {
+    width: 70%;
+}
+
 .sketches h5 {
     font-weight: 400;
     font-size: 1.2em;
+}
+
+.sketches .block {
+    margin-bottom: 3em;
 }
 
 .sketch {
