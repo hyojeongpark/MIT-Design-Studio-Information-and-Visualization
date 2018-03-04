@@ -15,14 +15,15 @@ d3.select('#final').on("click", function () {
 //plots
 
 
-//var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
+var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
 var mobile1 = d3.select('#mobile1')
-d3.json("data/boston_weather.json", draw);
-//d3.json("https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083", draw);
+//d3.json("data/boston_weather.json", draw);
+d3.json("https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083", draw);
 
 var $todayTemp = d3.select('.todayTemp');
 
 function draw(error, data) {
+    console.log(data);
     d3.select('#todayDate').text(dayFormat(new Date()));
 
     var todayTemp = data.currently.temperature;
