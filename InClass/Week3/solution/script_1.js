@@ -118,8 +118,6 @@ var plot2 = d3.select('#plot2') // if we select a html id #name, if we select a 
     .attr('width', width2 + margin2.r + margin2.l)
     .attr('height', height2 + margin2.t + margin2.b);
 
-
-
 d3.csv("../data/data.csv", parseData, drawData);
 
 function parseData(d) {
