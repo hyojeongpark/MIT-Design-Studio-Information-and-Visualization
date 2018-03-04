@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Weather App - Project 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.typekit.net/rkv2ylc.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <h1 class="col-md-12">First Dashboard</h1>
-
-            <div id="mobile1">
-                <div class="today">
-                    <h1>Cambridge</h1>
-                    <div class="temperature">
-                        <h2 class="todayTemp">00</h2>
-                        <h4 class="f">°F</h4>
-                        <h4 class="c">/C</h4>
+        <div class="row header">
+            <h1 class="title">Project 2: <br>Weather App</h1>
+            <h5 class="credit">4.032 Design Studio: Information and Visualization, Spring 2018<br>by Haley Park</h5>
+        </div>
+        <div class="row menu">
+            <h4 id="final" class="active">Final Visualizations</h4>
+            <h4 id="sketches">Sketches</h4>
+        </div>
+        <div class="final">
+           <div class="row">
+               <p>Final visualizations - development in progress.</p><br><br>
+           </div>
+            <div class="row">
+                <h3>First Dashboard</h3>
+                <div id="mobile1">
+                    <div class="today">
+                        <h1>Cambridge</h1>
+                        <div class="temperature">
+                            <h2 class="todayTemp">00</h2>
+                            <h4 class="f">°F</h4>
+                            <h4 class="c">/C</h4>
+                        </div>
+                        <div id="sun"></div>
                     </div>
-                    <div id="sun"></div>
-                </div>
-                <svg class="dome" width="375px" height="258px" viewBox="0 0 375 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <svg class="dome" width="375px" height="258px" viewBox="0 0 375 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="50%" y1="50%" x2="50%" y2="99.2582641%" id="linearGradient-1">
             <stop stop-color="#E3E3E3" offset="0%"></stop>
@@ -289,8 +302,8 @@
         </g>
     </g>
 </svg>
-                <div class="charles">
-                    <svg class="reflection" viewBox="0 0 375 260" preserveAspectRatio="none" width="375px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <div class="charles">
+                        <svg class="reflection" viewBox="0 0 375 260" preserveAspectRatio="none" width="375px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="50%" y1="50%" x2="50%" y2="99.2582641%" id="linearGradient-1">
             <stop stop-color="#E3E3E3" offset="0%"></stop>
@@ -557,21 +570,38 @@
     </g>
 </svg>
 
-                    <p>lol</p>
+                        <p>lol</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <h3>Second Dashboard</h3>
+                <div id="mobile2">
+                    <img class="iphoneX" src="sketch_2.png">
                 </div>
             </div>
         </div>
-        <br/>
-        <div class="row">
-            <h1 class="col-md-12">Second Dashboard</h1>
 
-            <div id="mobile2">
-                <img class="iphoneX" src="sketch_2.png">
+        <div class="sketches">
+            <div class="row">
+                <div class="design">
+                    <div class="sketch">
+                        <h5>Sketch 1: More Abstract</h5>
+                        <img src="sketch_1.png">
+                    </div>
+                    <div class="sketch">
+                        <h5>Sketch 2: More Literal</h5>
+                        <img src="sketch_2.png">
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
