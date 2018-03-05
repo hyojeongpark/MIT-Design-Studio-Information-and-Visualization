@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <title>Weather App - Project 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./style.css" >
-    <link href="http://localhost:8000/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://use.typekit.net/rkv2ylc.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 </head>
@@ -304,7 +303,6 @@
     </g>
 </svg>
                     <div class="charles">
-
                         <svg class="reflection" viewBox="0 0 375 260" preserveAspectRatio="none" width="375px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="50%" y1="50%" x2="50%" y2="99.2582641%" id="linearGradient-1">
@@ -573,20 +571,41 @@
 </svg>
                         <div class="content">
                             <h5 id="todayDate">Sunday, March 4th</h5>
-                        </div>
+                            <div class="times">
+                                <div class="hourly">
+                                    <span class="timeNotation" id="time-2">time-2</span>
+                                    <div id="weather-icon-hrBefore2"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation" id="time-1">time-1</span>
+                                    <div id="weather-icon-hrBefore"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation" id="now">NOW</span>
+                                    <div class="weather-icon" id="weather-icon-now"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation" id="timePlus1">time-2</span>
+                                    <div id="weather-icon-hrAfter"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span  class="timeNotation"id="timePlus2">time-1</span>
+                                    <div id="weather-icon-hrAfter2"></div>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <h3>Second Dashboard</h3>
+                    <div id="mobile2">
+                        <img class="iphoneX" src="sketch_2.png">
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <h3>Second Dashboard</h3>
-                <div id="mobile2">
-                    <img class="iphoneX" src="sketch_2.png">
-                </div>
-            </div>
         </div>
-
         <div class="sketches">
             <div class="block">
                 <h4>Initial Sketches</h4>
@@ -613,6 +632,7 @@
     </div>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="document.js"></script>
     <script src="script.js"></script>
 </body>
 
