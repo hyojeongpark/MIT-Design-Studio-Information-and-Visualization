@@ -123,6 +123,12 @@ body {
     background: linear-gradient(to bottom, #4D2BFF, #56CEFF);
     font-family: "proxima-nova", 'Montserrat', sans-serif;
     overflow: hidden;
+    animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
 
 #mobile1 .today {
