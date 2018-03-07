@@ -180,6 +180,7 @@ body {
     border-radius: 100%;
     background: linear-gradient(to bottom, #FF3B5D, rgb(255, 96, 133), rgba(255, 128, 133, 0.69), rgba(255, 182, 170, 0));
     margin-bottom: -70px;
+    mix-blend-mode: hard-light;
 }
 
 #mobile1 .today h1 {

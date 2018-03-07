@@ -13,20 +13,13 @@ var data = $.ajax({
     }
 })
 
-var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083';
-
 var mobile1 = d3.select('#mobile1');
-
-//d3.json(data, draw);
-//d3.json("https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083", draw);
-
-//draw(data);
 
 var $todayTemp = d3.select('.todayTemp');
 
 function draw(data) {
     console.log(data)
-    var nowTime = new Date(data.currently.time);
+    var nowTime = new Date(data.currently.time*1000);
     console.log(nowTime);
 
     for (i = 0; i < data.hourly.data.length; i++) {
@@ -53,17 +46,16 @@ function draw(data) {
         }
     });
 
-    d3.select('#time-2').text(nowTime.getHours() - 2 + ':00');
-    d3.select('#time-1').text(nowTime.getHours() - 1 + ':00');
-    d3.select('#timePlus1').text(nowTime.getHours() + 1 + ':00');
-    d3.select('#timePlus2').text(nowTime.getHours() + 2 + ':00');
+    d3.select('#time-2').text(nowTime.getHours() + ':00');
+    d3.select('#time-1').text(nowTime.getHours() + 1 + ':00');
+    d3.select('#timePlus1').text(nowTime.getHours() + 2 + ':00');
+    d3.select('#timePlus2').text(nowTime.getHours() + 3 + ':00');
 
     addWeatherIcon('#weather-icon-now', data.currently);
     addWeatherIcon('#weather-icon-hrBefore2', data.hourly.data[0]);
     addWeatherIcon('#weather-icon-hrBefore', data.hourly.data[1]);
-//    addWeatherIcon('#weather-icon-hrBefore', getIcon(nowTime.setHours(nowTime.getHours() - 1), data));
-    addWeatherIcon('#weather-icon-hrAfter', data.hourly.data[9]);
-    addWeatherIcon('#weather-icon-hrAfter2', data.hourly.data[12]);
+    addWeatherIcon('#weather-icon-hrAfter', data.hourly.data[2]);
+    addWeatherIcon('#weather-icon-hrAfter2', data.hourly.data[3]);
 
     setBackground(data.currently.icon);
 }
@@ -139,7 +131,7 @@ function addWeatherIcon(dom, node) {
             .attr("src", "rain.svg")
             .attr("width", 25)
     }
-    d3.select(dom).append('div').attr('class','temperature').text(Math.floor(node.temperature) + '°F');
+    d3.select(dom).append('div').attr('class', 'temperature').text(Math.floor(node.temperature) + '°F');
 }
 
 var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
