@@ -14,35 +14,37 @@ var data = $.ajax({
 })
 
 var mobile1 = d3.select('#mobile1');
-
 var $todayTemp = d3.select('.todayTemp');
+var iconDOM = ['#weather-icon-now', '#weather-icon-hrBefore2', '#weather-icon-hrBefore', '#weather-icon-hrAfter', '#weather-icon-hrAfter2'];
+var tempDOM = ['#temp-now', '#temp-1', '#temp-plus1', '#temp-plus2', '#temp-plus3'];
 
 function draw(data) {
-    console.log(data)
-    var nowTime = new Date(data.currently.time*1000);
-    console.log(nowTime);
-
-    for (i = 0; i < data.hourly.data.length; i++) {
-        console.log(new Date(data.hourly.data[i].time));
-    }
-
-    console.log(data);
-    d3.select('#todayDate').text(dayFormat(new Date()));
-
+    var fahrenheit = true;
+    var nowTime = new Date(data.currently.time * 1000);
     var todayTemp = data.currently.temperature;
-    console.log(todayTemp);
-
     $todayTemp.text(Math.floor(todayTemp));
+
+    d3.select('#todayDate').text(dayFormat(new Date()));
 
     d3.select('.c').on("click", function () {
         if (d3.select('.c').text() === '/C') {
             d3.select('.f').text('°C');
             d3.select('.c').text('/F');
-            $todayTemp.text(Math.floor(farToCelc(todayTemp)));
+            $todayTemp.text(Math.floor(fahrToCelc(todayTemp)));
+            fahrenheit = false;
+            addTemperature('#temp-now', data.currently, fahrenheit);
+            for (i = 1; i < tempDOM.length; i++) {
+                addTemperature(tempDOM[i], data.hourly.data[i - 1], fahrenheit);
+            }
         } else {
             d3.select('.f').text('°F');
             d3.select('.c').text('/C');
             $todayTemp.text(Math.floor(todayTemp));
+            fahrenheit = true;
+            addTemperature('#temp-now', data.currently, fahrenheit);
+            for (i = 1; i < tempDOM.length; i++) {
+                addTemperature(tempDOM[i], data.hourly.data[i - 1], fahrenheit);
+            }
         }
     });
 
@@ -51,17 +53,21 @@ function draw(data) {
     d3.select('#timePlus1').text(nowTime.getHours() + 2 + ':00');
     d3.select('#timePlus2').text(nowTime.getHours() + 3 + ':00');
 
+
     addWeatherIcon('#weather-icon-now', data.currently);
-    addWeatherIcon('#weather-icon-hrBefore2', data.hourly.data[0]);
-    addWeatherIcon('#weather-icon-hrBefore', data.hourly.data[1]);
-    addWeatherIcon('#weather-icon-hrAfter', data.hourly.data[2]);
-    addWeatherIcon('#weather-icon-hrAfter2', data.hourly.data[3]);
+    for (i = 1; i < iconDOM.length; i++) {
+        addWeatherIcon(iconDOM[i], data.hourly.data[i - 1]);
+    }
+
+    addTemperature('#temp-now', data.currently, fahrenheit);
+    for (i = 1; i < tempDOM.length; i++) {
+        addTemperature(tempDOM[i], data.hourly.data[i - 1], fahrenheit);
+    }
 
     setBackground(data.currently.icon);
 }
 
 function getIcon(time, data) {
-    console.log(time);
     for (i = 0; i < data.hourly.data.length; i++) {
         if (data.hourly.data[i].time === time) {
             var icon = data.hourly.data[i].icon;
@@ -71,7 +77,6 @@ function getIcon(time, data) {
 }
 
 function setBackground(icon) {
-    console.log(icon);
     if (icon == 'cloudy' || icon == 'snow' || icon == 'rain') {
         d3.select('#mobile1').style('background', "url('foggy.png'), #000000").style('background-blend-mode', "hard-light");
 
@@ -82,9 +87,7 @@ function setBackground(icon) {
 
         if (icon == "rain") {
             // I used css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
-
-            // number of drops created.
-            var nbDrop = 400;
+            var nbDrop = 400; // number of drops created.
 
             // function to generate a random number range.
             function randRange(minNum, maxNum) {
@@ -110,7 +113,6 @@ function setBackground(icon) {
 }
 
 function addWeatherIcon(dom, node) {
-    console.log(node);
     if (node.icon === "snow") {
         d3.select(dom).append("img")
             .attr("src", "snow.svg")
@@ -131,7 +133,14 @@ function addWeatherIcon(dom, node) {
             .attr("src", "rain.svg")
             .attr("width", 25)
     }
-    d3.select(dom).append('div').attr('class', 'temperature').text(Math.floor(node.temperature) + '°F');
+}
+
+function addTemperature(dom, node, fahrenheit) {
+    if (fahrenheit) {
+        d3.select(dom).text(Math.floor(node.temperature) + '°F');
+    } else {
+        d3.select(dom).text(Math.floor(fahrToCelc(node.temperature)) + '°C');
+    }
 }
 
 var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -143,6 +152,6 @@ function dayFormat(day) {
     return s;
 }
 
-function farToCelc(fahrenheit) {
+function fahrToCelc(fahrenheit) {
     return (fahrenheit - 32) * 0.5556;
 }
