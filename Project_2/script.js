@@ -1,18 +1,31 @@
-//plots
-
+var data = $.ajax({
+    url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083',
+    dataType: 'JSONP',
+    type: 'GET',
+    crossDomain: true,
+    complete: function (data) {
+        if (data.readyState == '4' && data.status == '200') {
+            console.log(data.responseJSON);
+            draw(data.responseJSON);
+        } else {
+            console.log("DATA FETCH FAILED")
+        }
+    }
+})
 
 var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083';
 
 var mobile1 = d3.select('#mobile1');
 
-d3.json("data/boston_weather.json", draw);
+//d3.json(data, draw);
 //d3.json("https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083", draw);
 
-
+//draw(data);
 
 var $todayTemp = d3.select('.todayTemp');
 
-function draw(error, data) {
+function draw(data) {
+    console.log(data)
     var nowTime = new Date(data.currently.time);
     console.log(nowTime);
 
@@ -45,14 +58,14 @@ function draw(error, data) {
     d3.select('#timePlus1').text(nowTime.getHours() + 1 + ':00');
     d3.select('#timePlus2').text(nowTime.getHours() + 2 + ':00');
 
-    addWeatherIcon('#weather-icon-now', data.hourly);
+    addWeatherIcon('#weather-icon-now', data.currently);
     addWeatherIcon('#weather-icon-hrBefore2', data.hourly.data[0]);
     addWeatherIcon('#weather-icon-hrBefore', data.hourly.data[1]);
-    //    addWeatherIcon('#weather-icon-hrBefore', getIcon(nowTime.setHours(nowTime.getHours() - 1), data));
+//    addWeatherIcon('#weather-icon-hrBefore', getIcon(nowTime.setHours(nowTime.getHours() - 1), data));
     addWeatherIcon('#weather-icon-hrAfter', data.hourly.data[9]);
     addWeatherIcon('#weather-icon-hrAfter2', data.hourly.data[12]);
 
-    setBackground('cloudy');
+    setBackground(data.currently.icon);
 }
 
 function getIcon(time, data) {
@@ -66,13 +79,41 @@ function getIcon(time, data) {
 }
 
 function setBackground(icon) {
-    if (icon == 'cloudy' || 'snow') {
+    console.log(icon);
+    if (icon == 'cloudy' || icon == 'snow' || icon == 'rain') {
         d3.select('#mobile1').style('background', "url('foggy.png'), #000000").style('background-blend-mode', "hard-light");
 
         d3.select('.dome').style('opacity', 0.88);
         d3.select('#sun').style('opacity', 0);
 
         d3.select('.charles').style('background', 'linear-gradient(rgba(14, 30, 75, 0.88), rgba(138, 156, 212, 0.88))').style('mix-blend-mode', 'multiply');
+
+        if (icon == "rain") {
+            // I used css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
+
+            // number of drops created.
+            var nbDrop = 400;
+
+            // function to generate a random number range.
+            function randRange(minNum, maxNum) {
+                return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+            }
+
+            // function to generate drops
+            function createRain() {
+                for (i = 1; i < nbDrop; i++) {
+                    var dropLeft = randRange(0, 400);
+                    var dropTop = randRange(-1800, 1800);
+                    d3.select('#mobile1').append('div').attr('class', "drop").attr('id', "drop" + i);
+                    d3.select('#drop' + i).style('left', dropLeft + 'px');
+                    d3.select('#drop' + i).style('top', dropTop + 'px');
+                }
+            }
+            // Make it rain
+            createRain();
+        }
+    } else if (icon.includes('partly-cloudy')) {
+        d3.select('#mobile1').style('background', "url('clouds.png'), linear-gradient(to bottom, #4D2BFF, #56CEFF)");
     }
 }
 
@@ -93,9 +134,12 @@ function addWeatherIcon(dom, node) {
             .attr("src", "partlycloudy.svg")
             .attr("width", 34)
             .attr("height", 21);
+    } else if (node.icon === "rain") {
+        d3.select(dom).append("img")
+            .attr("src", "rain.svg")
+            .attr("width", 25)
     }
-
-    d3.select(dom).select('.temperature').text(node.temperature);
+    d3.select(dom).append('div').attr('class','temperature').text(Math.floor(node.temperature) + '°C');
 }
 
 var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

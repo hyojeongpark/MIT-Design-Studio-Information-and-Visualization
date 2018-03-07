@@ -1,3 +1,5 @@
+/*I used css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg*/
+
 body {
     padding: 7em 3em 5em;
 }
@@ -124,12 +126,43 @@ body {
     font-family: "proxima-nova", 'Montserrat', sans-serif;
     overflow: hidden;
     animation: animatedBackground 40s linear infinite;
+    position: relative;
 }
 
 @keyframes animatedBackground {
-	from { background-position: 0 0; }
-	to { background-position: 100% 0; }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
 }
+
+.drop {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7F91AD), to(rgba(255, 255, 255, 0.6)));
+    background: -moz-linear-gradient(top, rgba(13, 52, 58, 1) 0%, rgba(255, 255, 255, .6) 100%);
+    width: 1px;
+    height: 90px;
+    position: absolute;
+    -webkit-animation: fall 5s linear infinite;
+    -moz-animation: fall 5s linear infinite;
+    mix-blend-mode: soft-light;
+}
+
+/* animate the drops*/
+
+@-webkit-keyframes fall {
+    to {
+        margin-top: 800px;
+    }
+}
+
+@-moz-keyframes fall {
+    to {
+        margin-top: 800px;
+    }
+}
+
 
 #mobile1 .today {
     text-transform: uppercase;
@@ -192,6 +225,10 @@ body {
 
 #mobile1 .charles .content .hourly {
     width: 20%;
+}
+
+#mobile1 .charles .content .hourly .temperature {
+    padding-top: 0.37em;
 }
 
 #mobile1 .charles .content .timeNotation {
