@@ -139,7 +139,7 @@ function addWeatherIcon(dom, node) {
             .attr("src", "rain.svg")
             .attr("width", 25)
     }
-    d3.select(dom).append('div').attr('class','temperature').text(Math.floor(node.temperature) + '°C');
+    d3.select(dom).append('div').attr('class','temperature').text(Math.floor(node.temperature) + '°F');
 }
 
 var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
