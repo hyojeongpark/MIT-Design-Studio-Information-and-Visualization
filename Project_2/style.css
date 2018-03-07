@@ -56,6 +56,7 @@ body {
 
 .design {
     width: 100%;
+    display: block;
 }
 
 .sketches {
@@ -69,14 +70,17 @@ body {
 .sketches h5 {
     font-weight: 400;
     font-size: 1.2em;
+    width: 100%;
+    display: block;
 }
 
 .sketches .block {
     margin-bottom: 3em;
+    display: block;
 }
 
 .sketch {
-    float: left;
+    display: inline-block;
     width: 30%;
     margin-right: 3em;
 }
@@ -103,10 +107,10 @@ body {
 
 .sketch img {
     max-width: 375px;
-    flex-grow: 0;
     height: 100%;
     width: 100%;
 }
+
 
 #mobile1,
 #mobile2 {
