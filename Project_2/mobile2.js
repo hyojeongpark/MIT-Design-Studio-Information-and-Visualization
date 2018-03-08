@@ -73,7 +73,8 @@ function drawTempBars(dom, maxTemp, minTemp) {
     var height = (maxTemp - minTemp) * 3;
     d3.select(dom).append('div')
         .attr('class', 'barGraphContainer')
-        .style('margin-top', (Math.floor((height / (maxTemp - minTemp))/1.2) * minTemp) + 'px').append('span')
+        .style('padding-top', (120 - maxTemp) + 'px')
+        .append('span')
         .attr('class', 'maxTemp')
         .text(Math.floor(maxTemp)).style('margin-bottom', '1em');
 
