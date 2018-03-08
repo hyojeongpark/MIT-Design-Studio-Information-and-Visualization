@@ -125,9 +125,7 @@ body {
 
 #mobile1 {
     color: #fff;
-    /*    background: linear-gradient(to bottom, #4D2BFF, #56CEFF);*/
     overflow: hidden;
-    /*    animation: animatedBackground 40s linear infinite;*/
     position: relative;
 }
 
@@ -354,10 +352,6 @@ body {
 #mobile2 .sun {
     width: 80px;
     height: 80px;
-    /*
-    border-radius: 100%;
-    background: #FFC130;
-*/
     margin-bottom: -80px;
 }
 
