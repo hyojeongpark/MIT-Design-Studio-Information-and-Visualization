@@ -36,7 +36,7 @@ function draw(data) {
         if (mobile1.select('.c').text() === '/C') {
             mobile1.select('.f').text('°C');
             mobile1.select('.c').text('/F');
-            $todayTemp.text(Math.floor(fahrToCelc(todayTemp)));
+            mobile1.select('.todayTemp').text(Math.floor(fahrToCelc(todayTemp)));
             fahrenheit = false;
             addTemperature('mobile1', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -45,7 +45,7 @@ function draw(data) {
         } else {
             mobile1.select('.f').text('°F');
             mobile1.select('.c').text('/C');
-            $todayTemp.text(Math.floor(todayTemp));
+            mobile1.select('.todayTemp').text(Math.floor(todayTemp));
             fahrenheit = true;
             addTemperature('mobile1', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
