@@ -419,15 +419,45 @@ body {
     white-space: nowrap;
     display: flex;
     -webkit-overflow-scrolling: touch;
+    height: 100%;
 }
 
 #mobile2 .day {
     flex: 0 0 auto;
     width: 60px;
+    position: relative;
 }
 
 #mobile2 .content h5 {
     font-weight: 300 !important;
     text-align: center;
     margin: 0.7em 0 0.5em;
+}
+
+#mobile2 .day-icon {
+    margin-bottom: 1em;
+}
+
+#mobile2 .barGraphContainer {
+    text-align: center;
+    width: 0.5em;
+    margin: 0 auto;
+}
+
+#mobile2 .barGraphContainer span{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#mobile2 .barGraphContainer .maxTemp{
+    display: block;
+    margin-top: -2em;
+}
+
+#mobile2 .barGraphContainer svg{
+    margin: 0 auto;
 }

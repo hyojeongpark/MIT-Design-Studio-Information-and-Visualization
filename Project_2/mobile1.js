@@ -88,11 +88,6 @@ function setBackground(icon) {
             // Implemented from css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
             var nbDrop = 400; // number of drops created.
 
-            // function to generate a random number range.
-            function randRange(minNum, maxNum) {
-                return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
-            }
-
             // function to generate drops
             function createRain() {
                 for (i = 1; i < nbDrop; i++) {
@@ -101,21 +96,16 @@ function setBackground(icon) {
                     mobile1.append('div')
                         .attr('class', "drop")
                         .attr('id', "drop" + i);
-                    mobile1.select('#drop' + i).style('left', dropLeft + 'px');
-                    mobile1.select('#drop' + i).style('top', dropTop + 'px');
+                    mobile1.select('#drop' + i)
+                        .style('left', dropLeft + 'px')
+                        .style('top', dropTop + 'px');
                 }
             }
-            // Make it rain
-            createRain();
+            createRain(); // Make it rain
 
         } else if (icon == 'snow') {
             // Implemented from css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
             var nbDrop = 500; // number of drops created.
-
-            // function to generate a random number range.
-            function randRange(minNum, maxNum) {
-                return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
-            }
 
             // function to generate drops
             function createSnow() {
@@ -125,11 +115,11 @@ function setBackground(icon) {
                     mobile1.append('div')
                         .attr('class', "snow")
                         .attr('id', "snow" + i);
-                    mobile1.select('#snow' + i).style('left', dropLeft + 'px');
-                    mobile1.select('#snow' + i).style('top', dropTop + 'px');
+                    mobile1.select('#snow' + i)
+                        .style('left', dropLeft + 'px')
+                        .style('top', dropTop + 'px');;
                 }
             }
-            // Make it rain
             createSnow();
 
         } else if (icon == "fog") {
@@ -182,6 +172,10 @@ function addWeatherIcon(canvas, dom, node) {
         d3.select('#' + canvas).select(dom).append("img")
             .attr("src", canvas + "/fog.svg")
             .attr("height", 21);
+    } else {
+        d3.select('#' + canvas).select(dom).append("img")
+            .attr("src", canvas + "/sunny.svg")
+            .attr("width", 21);
     }
 }
 
@@ -200,4 +194,9 @@ function dayFormat(day) {
 
 function fahrToCelc(fahrenheit) {
     return (fahrenheit - 32) * 0.5556;
+}
+
+// helper function to generate a random number range.
+function randRange(minNum, maxNum) {
+    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
 }

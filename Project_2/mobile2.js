@@ -57,10 +57,36 @@ function draw_mobile2(data) {
         addWeatherIcon('mobile2', '.day-icon-' + i, data.daily.data[i]);
     }
 
+    // adds weekdays
     mobile2.selectAll('.weekday').each(function (i, e) {
         var dayObj = new Date(data.daily.data[e].time * 1000);
         d3.select(this).text(dayFormat(dayObj).slice(0, 3));
     });
+
+    // draws bar graph
+    mobile2.selectAll('.day').each(function (i, e) {
+        drawTempBars(this, data.daily.data[e].temperatureMax, data.daily.data[e].temperatureMin);
+    });
+}
+
+function drawTempBars(dom, maxTemp, minTemp) {
+    var height = (maxTemp - minTemp) * 3;
+    d3.select(dom).append('div')
+        .attr('class', 'barGraphContainer')
+        .style('margin-top', (Math.floor((height / (maxTemp - minTemp))/1.2) * minTemp) + 'px').append('span')
+        .attr('class', 'maxTemp')
+        .text(Math.floor(maxTemp)).style('margin-bottom', '1em');
+
+    d3.select(dom).select('.barGraphContainer').append('svg')
+        .attr('class', 'barGraph')
+        .attr('width', '10')
+        .attr('height', height)
+        .style('background', 'linear-gradient(to bottom, #1B0083, rgba(27, 0, 131, 0))');
+
+    d3.select(dom).select('.barGraphContainer').append('span')
+        .attr('class', 'minTemp')
+        .attr('class', 'minTemp')
+        .text(Math.floor(minTemp));
 }
 
 function setBigIcon(canvas, icon) {
