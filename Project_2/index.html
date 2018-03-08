@@ -25,14 +25,17 @@
                 <p>Final visualizations - development in progress.</p><br><br>
             </div>
             <div class="row">
-                <h3>First Dashboard</h3>
+                <div class="description">
+                    <h3>First Dashboard</h3>
+                    <p>The SVG icons may not load the first time you open the page. </p>
+                </div>
                 <div id="mobile1">
                     <div class="today">
                         <h1>Cambridge</h1>
                         <h2 class="todayTemp">00</h2>
                         <h4 class="f">°F</h4>
                         <h4 class="c">/C</h4>
-                        <div id="sun"></div>
+                        <div class="sun"></div>
                     </div>
                     <svg class="dome" width="375px" height="258px" viewBox="0 0 375 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
@@ -568,32 +571,32 @@
     </g>
 </svg>
                         <div class="content">
-                            <h5 id="todayDate">Sunday, March 4th</h5>
+                            <h5 class="todayDate">Sunday, March 4th</h5>
                             <div class="times">
                                 <div class="hourly">
-                                    <span class="timeNotation" id="time-2">time-2</span>
-                                    <div id="weather-icon-hrBefore2"></div>
-                                    <div class="temperature" id="temp-1"></div>
+                                    <span class="timeNotation time-2">time-2</span>
+                                    <div class="weather-icon-hrBefore2"></div>
+                                    <div class="temperature temp-1"></div>
                                 </div>
                                 <div class="hourly">
-                                    <span class="timeNotation" id="now">NOW</span>
-                                    <div class="weather-icon" id="weather-icon-now"></div>
-                                    <div class="temperature" id="temp-now"></div>
+                                    <span class="timeNotation now">NOW</span>
+                                    <div class="weather-icon weather-icon-now"></div>
+                                    <div class="temperature temp-now"></div>
                                 </div>
                                 <div class="hourly">
-                                    <span class="timeNotation" id="time-1">time-1</span>
-                                    <div id="weather-icon-hrBefore"></div>
-                                    <div class="temperature" id="temp-plus1"></div>
+                                    <span class="timeNotation time-1">time-1</span>
+                                    <div class="weather-icon-hrBefore"></div>
+                                    <div class="temperature temp-plus1"></div>
                                 </div>
                                 <div class="hourly">
-                                    <span class="timeNotation" id="timePlus1">time-2</span>
-                                    <div id="weather-icon-hrAfter"></div>
-                                    <div class="temperature" id="temp-plus2"></div>
+                                    <span class="timeNotation timePlus1">time-2</span>
+                                    <div class="weather-icon-hrAfter"></div>
+                                    <div class="temperature temp-plus2"></div>
                                 </div>
                                 <div class="hourly">
-                                    <span class="timeNotation" id="timePlus2">time-1</span>
-                                    <div id="weather-icon-hrAfter2"></div>
-                                    <div class="temperature" id="temp-plus3"></div>
+                                    <span class="timeNotation timePlus2">time-1</span>
+                                    <div class="weather-icon-hrAfter2"></div>
+                                    <div class="temperature temp-plus3"></div>
                                 </div>
                             </div>
 
@@ -601,10 +604,76 @@
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <h3>Second Dashboard</h3>
-                    <div id="mobile2">
-                        <img class="iphoneX" src="sketch_2.png">
+            </div>
+            <div class="row">
+                <h3>Second Dashboard</h3>
+                <div id="mobile2">
+                    <div class="today">
+                        <h1>Cambridge</h1>
+                        <div class="sun"></div>
+                        <h2 class="todayTemp">00</h2>
+                        <h4 class="f">°F</h4>
+                        <h4 class="c">/C</h4>
+                    </div>
+                    <div class="content">
+                        <div class="times">
+                            <div class="hourly">
+                                <span class="timeNotation time-2">time-2</span>
+                                <div class="weather-icon-hrBefore2"></div>
+                                <div class="temperature temp-1"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation now">NOW</span>
+                                <div class="weather-icon weather-icon-now"></div>
+                                <div class="temperature temp-now"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation time-1">time-1</span>
+                                <div class="weather-icon-hrBefore"></div>
+                                <div class="temperature temp-plus1"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation timePlus1">time-2</span>
+                                <div class="weather-icon-hrAfter"></div>
+                                <div class="temperature temp-plus2"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation timePlus2">time-1</span>
+                                <div class="weather-icon-hrAfter2"></div>
+                                <div class="temperature temp-plus3"></div>
+                            </div>
+                        </div>
+                        <h5 class="todayDate">Sunday, March 4th</h5>
+                        <div class="days">
+                            <div class="day">
+                                <span class="weekday">Mon</span>
+                                <div class="day-icon day-icon-0"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Mon</span>
+                                <div class="day-icon day-icon-1"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Tue</span>
+                                <div class="day-icon day-icon-2"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Wed</span>
+                                <div class="day-icon day-icon-3"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Thu</span>
+                                <div class="day-icon day-icon-4"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Fri</span>
+                                <div class="day-icon day-icon-5"></div>
+                            </div>
+                               <div class="day">
+                                <span class="weekday">Sat</span>
+                                <div class="day-icon day-icon-6"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

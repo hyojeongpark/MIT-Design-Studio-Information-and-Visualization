@@ -111,23 +111,21 @@ body {
     width: 100%;
 }
 
-
 #mobile1,
 #mobile2 {
     width: 375px;
     height: 812px;
     border: 1px solid;
-    float: left;
+    float: right;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
-    overflow: scroll;
+    font-family: "proxima-nova", 'Montserrat', sans-serif;
 }
 
 #mobile1 {
     color: #fff;
     background: linear-gradient(to bottom, #4D2BFF, #56CEFF);
-    font-family: "proxima-nova", 'Montserrat', sans-serif;
     overflow: hidden;
     animation: animatedBackground 40s linear infinite;
     position: relative;
@@ -153,6 +151,18 @@ body {
     mix-blend-mode: soft-light;
 }
 
+.snow {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(rgba(255, 255, 255, 0.6)));
+    background: -moz-linear-gradient(top, rgba(13, 52, 58, 1) 0%, rgba(255, 255, 255, .6) 100%);
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: fall 7s linear infinite;
+    -moz-animation: fall 7s linear infinite;
+    mix-blend-mode: soft-light;
+}
+
 /* animate the drops*/
 
 @-webkit-keyframes fall {
@@ -168,19 +178,11 @@ body {
 }
 
 
-#mobile1 .today {
+#mobile1 .today,
+#mobile2 .today {
     text-transform: uppercase;
     text-align: center;
     padding: 5.5em 1em 1em;
-}
-
-#mobile1 #sun {
-    width: 8.2em;
-    height: 8.2em;
-    border-radius: 100%;
-    background: linear-gradient(to bottom, #FF3B5D, rgb(255, 96, 133), rgba(255, 128, 133, 0.69), rgba(255, 182, 170, 0));
-    margin-bottom: -70px;
-    mix-blend-mode: hard-light;
 }
 
 #mobile1 .today h1 {
@@ -188,6 +190,15 @@ body {
     letter-spacing: 0.5em;
     font-size: 1.5em;
     margin-right: -0.5em;
+}
+
+#mobile1 .sun {
+    width: 8.2em;
+    height: 8.2em;
+    border-radius: 100%;
+    background: linear-gradient(to bottom, #FF3B5D, rgb(255, 96, 133), rgba(255, 128, 133, 0.69), rgba(255, 182, 170, 0));
+    margin-bottom: -70px;
+    mix-blend-mode: hard-light;
 }
 
 #mobile1 .todayTemp {
@@ -228,15 +239,19 @@ body {
     display: flex;
 }
 
-#mobile1 .charles .content .hourly {
+#mobile1 .charles .content .hourly,
+#mobile2 .content .hourly {
     width: 20%;
+    text-align: center;
 }
 
-#mobile1 .charles .content .hourly .temperature {
+#mobile1 .charles .content .hourly .temperature,
+#mobile2 .content .hourly .temperature {
     padding-top: 0.37em;
 }
 
-#mobile1 .charles .content .timeNotation {
+#mobile1 .charles .content .timeNotation,
+#mobile2 .content .timeNotation {
     display: block;
     margin-bottom: 0.2em;
 }
@@ -263,4 +278,144 @@ body {
 #mobile1 img,
 #mobile2 img {
     height: 100%;
+}
+
+#mobile2 {
+    position: relative;
+    color: #1B0083;
+}
+
+#mobile2:before {
+    content: ' ';
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(noise.png), linear-gradient(to bottom, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #1B0083);
+}
+
+#mobile2 .today {
+    padding: 5.5em 2em 1em;
+}
+
+#mobile2 .today h1 {
+    font-weight: 200;
+    letter-spacing: 0.5em;
+    font-size: 1.5em;
+    margin-right: -0.5em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+#mobile2 .today h4 {
+    font-weight: 200;
+    display: inline-block;
+    line-height: 80px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#mobile2 .todayTemp {
+    font-weight: 200;
+    font-size: 1.5em;
+    display: inline-block;
+    margin-left: -2.4em;
+    letter-spacing: 0.1em;
+    line-height: 80px;
+    margin-bottom: 0px;
+}
+
+#mobile2 .today .c {
+    opacity: 0.3;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+#mobile2 .sun {
+    width: 80px;
+    height: 80px;
+    /*
+    border-radius: 100%;
+    background: #FFC130;
+*/
+    margin-bottom: -80px;
+}
+
+#mobile2 .summary {
+    float: right;
+}
+
+#mobile2 .content {
+    font-weight: 200;
+    height: 100%;
+    padding: 0 1.5em;
+    text-transform: uppercase;
+}
+
+#mobile2 .content .times {
+    display: flex;
+    padding-bottom: 0.55em;
+    border-bottom: 0.1px solid #1B0083;
+}
+
+#mobile2 .snow-icon {
+    animation: spin 40s linear infinite;
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#mobile2 .days {
+    text-align: center;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+}
+
+#mobile2 .day {
+    flex: 0 0 auto;
+    width: 60px;
+}
+
+#mobile2 .content h5 {
+    font-weight: 300 !important;
+    text-align: center;
+    margin: 0.7em 0 0.5em;
 }

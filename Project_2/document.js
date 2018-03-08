@@ -11,4 +11,3 @@ d3.select('#final').on("click", function () {
     d3.select('#sketches').classed("active", false);
     d3.select('.sketches').style('display', 'none');
 })
-
