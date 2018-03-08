@@ -58,7 +58,6 @@ function draw_mobile2(data) {
     }
 
     mobile2.selectAll('.weekday').each(function (i, e) {
-        console.log(this);
         var dayObj = new Date(data.daily.data[e].time * 1000);
         d3.select(this).text(dayFormat(dayObj).slice(0, 3));
     });

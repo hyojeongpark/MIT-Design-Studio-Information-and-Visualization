@@ -125,10 +125,20 @@ body {
 
 #mobile1 {
     color: #fff;
-    background: linear-gradient(to bottom, #4D2BFF, #56CEFF);
+    /*    background: linear-gradient(to bottom, #4D2BFF, #56CEFF);*/
     overflow: hidden;
-    animation: animatedBackground 40s linear infinite;
+    /*    animation: animatedBackground 40s linear infinite;*/
     position: relative;
+}
+
+#mobile1 .background {
+    width: 110%;
+    height: 130%;
+    background: linear-gradient(to bottom, #4D2BFF, #56CEFF);
+    animation: animatedBackground 40s linear infinite;
+    z-index: -100;
+    position: absolute;
+    margin: -20px;
 }
 
 @keyframes animatedBackground {
@@ -221,11 +231,19 @@ body {
 }
 
 #mobile1 .charles {
-    background: linear-gradient(to right, rgb(0, 0, 95), #5A82F9);
     height: 33%;
     margin-top: -7px;
     position: relative;
     text-align: center;
+}
+
+#mobile1 .charles .background {
+    background: linear-gradient(to right, rgb(0, 0, 95), #5A82F9);
+    width: 110%;
+    height: 130%;
+    z-index: -100;
+    position: absolute;
+    margin: -20px;
 }
 
 #mobile1 .charles .content {
@@ -301,7 +319,7 @@ body {
 }
 
 #mobile2 .today h1 {
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 0.5em;
     font-size: 1.5em;
     margin-right: -0.5em;

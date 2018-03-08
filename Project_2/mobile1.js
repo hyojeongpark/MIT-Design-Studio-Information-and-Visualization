@@ -74,13 +74,15 @@ function draw(data) {
 }
 
 function setBackground(icon) {
-    if (icon == 'cloudy' || icon == 'snow' || icon == 'rain') {
-        mobile1.style('background', "url('./mobile1/foggy.png'), #000000").style('background-blend-mode', "hard-light");
+    if (icon == 'cloudy' || icon == 'snow' || icon == 'rain' || icon == "fog") {
+        mobile1.select('.background').style('background', "url('./mobile1/foggy.png'), #000000").style('background-blend-mode', "hard-light");
 
         mobile1.select('.dome').style('opacity', 0.88);
         mobile1.select('.sun').style('opacity', 0);
 
-        mobile1.select('.charles').style('background', 'linear-gradient(rgba(14, 30, 75, 0.88), rgba(138, 156, 212, 0.88))').style('mix-blend-mode', 'multiply');
+        mobile1.select('.charles').select('.background')
+            .style('background', 'linear-gradient(rgba(14, 30, 75, 0.88), rgba(138, 156, 212, 0.88))')
+            .style('mix-blend-mode', 'multiply');
 
         if (icon == "rain") {
             // Implemented from css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
@@ -129,9 +131,30 @@ function setBackground(icon) {
             }
             // Make it rain
             createSnow();
+
+        } else if (icon == "fog") {
+            mobile1.select('.background')
+                .style('-webkit-backdrop-filter', 'blur(10px)')
+                .style('-moz-filter', 'blur(10px)')
+                .style('-o-filter', 'blur(10px)')
+                .style('-ms-filter', 'blur(10px)')
+                .style('filter', 'blur(10px)');
+            mobile1.select('.dome')
+                .style('-webkit-backdrop-filter', 'blur(2px)')
+                .style('-moz-filter', 'blur(2px)')
+                .style('-o-filter', 'blur(2px)')
+                .style('-ms-filter', 'blur(2px)')
+                .style('filter', 'blur(2px)');
+            mobile1.select('.charles').select('.background')
+                .style('-webkit-backdrop-filter', 'blur(2px)')
+                .style('-moz-filter', 'blur(2px)')
+                .style('-o-filter', 'blur(2px)')
+                .style('-ms-filter', 'blur(2px)')
+                .style('filter', 'blur(2px)');
         }
+
     } else if (icon.includes('partly-cloudy')) {
-        mobile1.style('background', "url('./mobile1/clouds.png'), linear-gradient(to bottom, #4D2BFF, #56CEFF)");
+        mobile1.select('.background').style('background', "url('./mobile1/clouds.png'), linear-gradient(to bottom, #4D2BFF, #56CEFF)");
     }
 }
 
