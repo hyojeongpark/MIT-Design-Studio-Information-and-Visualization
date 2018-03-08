@@ -70,10 +70,10 @@ function draw_mobile2(data) {
 }
 
 function drawTempBars(dom, maxTemp, minTemp) {
-    var height = (maxTemp - minTemp) * 3;
+    var height = (maxTemp - minTemp) * 4;
     d3.select(dom).append('div')
         .attr('class', 'barGraphContainer')
-        .style('padding-top', (120 - maxTemp) + 'px')
+        .style('padding-top', (120 - maxTemp) * 4 - 170 + 'px')
         .append('span')
         .attr('class', 'maxTemp')
         .text(Math.floor(maxTemp)).style('margin-bottom', '1em');
