@@ -1,5 +1,5 @@
 var data = $.ajax({
-    url: 'https://api.darksky.net/forecast/bb320076025b465b4a5b2d7b924808fd/37.8267,-122.4233',
+    url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.373616,-71.109733',
     dataType: 'JSONP',
     type: 'GET',
     crossDomain: true,
