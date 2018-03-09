@@ -1,26 +1,19 @@
 var mobile2 = d3.select('#mobile2');
-var $todayTemp = mobile2.select('.todayTemp');
-d3.selection.prototype.size = function () {
-    var n = 0;
-    this.each(function () {
-        ++n;
-    });
-    return n;
-};
 
 function draw_mobile2(data) {
     var fahrenheit = true;
     var nowTime = new Date(data.currently.time * 1000);
     var todayTemp = data.currently.temperature;
 
-    $todayTemp.text(Math.floor(todayTemp));
+    mobile2.select('.todayTemp').text(Math.floor(todayTemp));
     setBigIcon('mobile2', data.currently.icon);
 
     mobile2.select('.c').on("click", function () {
         if (mobile2.select('.c').text() === '/C') {
             mobile2.select('.f').text('°C');
             mobile2.select('.c').text('/F');
-            $todayTemp.text(Math.floor(fahrToCelc(todayTemp)));
+            mobile2.select('.todayTemp')
+                .text(Math.floor(fahrToCelc(todayTemp)));
             fahrenheit = false;
             addTemperature('mobile2', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -33,7 +26,8 @@ function draw_mobile2(data) {
         } else {
             mobile2.select('.f').text('°F');
             mobile2.select('.c').text('/C');
-            $todayTemp.text(Math.floor(todayTemp));
+            mobile2.select('.todayTemp')
+                .text(Math.floor(todayTemp));
             fahrenheit = true;
             addTemperature('mobile2', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -78,26 +72,26 @@ function draw_mobile2(data) {
 
 function drawTempBars(dom, maxTemp, minTemp) {
     d3.select(dom).select('.barGraphContainer').remove();
-        var height = (maxTemp - minTemp) * 4;
-        d3.select(dom).append('div')
-            .attr('class', 'barGraphContainer')
-            .style('padding-top', (120 - maxTemp) * 4 - 170 + 'px')
-            .append('span')
-            .attr('class', 'barChartTemp')
-            .attr('class', 'maxTemp')
-            .text(Math.floor(maxTemp))
-            .style('margin-bottom', '1em');
+    var height = (maxTemp - minTemp) * 4;
+    d3.select(dom).append('div')
+        .attr('class', 'barGraphContainer')
+        .style('padding-top', (120 - maxTemp) * 4 - 170 + 'px')
+        .append('span')
+        .attr('class', 'barChartTemp')
+        .attr('class', 'maxTemp')
+        .text(Math.floor(maxTemp))
+        .style('margin-bottom', '1em');
 
-        d3.select(dom).select('.barGraphContainer').append('svg')
-            .attr('class', 'barGraph')
-            .attr('width', '10')
-            .attr('height', height)
-            .style('background', 'linear-gradient(to bottom, #1B0083, rgba(27, 0, 131, 0))');
+    d3.select(dom).select('.barGraphContainer').append('svg')
+        .attr('class', 'barGraph')
+        .attr('width', '10')
+        .attr('height', height)
+        .style('background', 'linear-gradient(to bottom, #1B0083, rgba(27, 0, 131, 0))');
 
-        d3.select(dom).select('.barGraphContainer').append('span')
-            .attr('class', 'barChartTemp')
-            .attr('class', 'minTemp')
-            .text(Math.floor(minTemp));
+    d3.select(dom).select('.barGraphContainer').append('span')
+        .attr('class', 'barChartTemp')
+        .attr('class', 'minTemp')
+        .text(Math.floor(minTemp));
 }
 
 function setBigIcon(canvas, icon) {
@@ -131,3 +125,12 @@ function setBigIcon(canvas, icon) {
             .attr("width", 80);
     }
 }
+
+// helper function size() that returns the number of dom elements
+d3.selection.prototype.size = function () {
+    var n = 0;
+    this.each(function () {
+        ++n;
+    });
+    return n;
+};

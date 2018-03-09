@@ -1,3 +1,12 @@
+var mobile1 = d3.select('#mobile1');
+
+var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+var iconDOM = ['.weather-icon-now', '.weather-icon-hrBefore2', '.weather-icon-hrBefore', '.weather-icon-hrAfter', '.weather-icon-hrAfter2'];
+var tempDOM = ['.temp-now', '.temp-1', '.temp-plus1', '.temp-plus2', '.temp-plus3'];
+
+//fetch the data
 var data = $.ajax({
     url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.373616,-71.109733',
     dataType: 'JSONP',
@@ -14,15 +23,7 @@ var data = $.ajax({
             d3.json("./data/boston_weather.json", draw_mobile2);
         }
     }
-})
-
-var mobile1 = d3.select('#mobile1');
-
-var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-var iconDOM = ['.weather-icon-now', '.weather-icon-hrBefore2', '.weather-icon-hrBefore', '.weather-icon-hrAfter', '.weather-icon-hrAfter2'];
-var tempDOM = ['.temp-now', '.temp-1', '.temp-plus1', '.temp-plus2', '.temp-plus3'];
+});
 
 d3.selectAll('.todayDate').text(dayFormat(new Date()));
 
@@ -36,9 +37,12 @@ function draw(data) {
         if (mobile1.select('.c').text() === '/C') {
             mobile1.select('.f').text('°C');
             mobile1.select('.c').text('/F');
-            mobile1.select('.todayTemp').text(Math.floor(fahrToCelc(todayTemp)));
+            mobile1.select('.todayTemp')
+                .text(Math.floor(fahrToCelc(todayTemp)));
+
             fahrenheit = false;
             addTemperature('mobile1', '.temp-now', data.currently, fahrenheit);
+
             for (i = 1; i < tempDOM.length; i++) {
                 addTemperature('mobile1', tempDOM[i], data.hourly.data[i - 1], fahrenheit);
             }
@@ -59,7 +63,6 @@ function draw(data) {
     mobile1.select('.timePlus1').text(nowTime.getHours() + 2 + ':00');
     mobile1.select('.timePlus2').text(nowTime.getHours() + 3 + ':00');
 
-
     addWeatherIcon('mobile1', '.weather-icon-now', data.currently);
     for (i = 1; i < iconDOM.length; i++) {
         addWeatherIcon('mobile1', iconDOM[i], data.hourly.data[i - 1]);
@@ -72,49 +75,25 @@ function draw(data) {
 
     setBackground(data.currently.icon);
 
-    //background variations
-
-    d3.select('#sunny').on("click", function () {
-        mobile1.selectAll('.drop').remove();
-        mobile1.selectAll('.snow').remove();
-        setBackground('sunny');
-    })
-
-    d3.select('#partly-cloudy').on("click", function () {
-        mobile1.selectAll('.drop').remove();
-        mobile1.selectAll('.snow').remove();
-        setBackground('partly-cloudy');
-    })
-    d3.select('#cloudy').on("click", function () {
-        mobile1.selectAll('.drop').remove();
-        mobile1.selectAll('.snow').remove();
-        setBackground('cloudy');
-    })
-    d3.select('#rainy').on("click", function () {
-        mobile1.selectAll('.drop').remove();
-        mobile1.selectAll('.snow').remove();
-        setBackground('rain');
-    })
-    d3.select('#snowy').on("click", function () {
-        mobile1.selectAll('.drop').remove();
-        mobile1.selectAll('.snow').remove();
-        setBackground('snow');
-    })
-
-    d3.select('#foggy').on("click", function () {
-        mobile2.selectAll('.drop').remove();
-        mobile2.selectAll('.snow').remove();
-        setBackground('fog');
-    })
-
+    // set background to default
     d3.select('#default').on("click", function () {
-        mobile2.selectAll('.drop').remove();
-        mobile2.selectAll('.snow').remove();
         setBackground(data.currently.icon);
-    })
+    });
+}
+
+function backgroundReset() {
+    mobile1.selectAll('.drop').remove();
+    mobile1.selectAll('.snow').remove();
+    mobile1.select('.background').classed("fog", false);
+    mobile1.select('.dome').classed("svgFog", false);
+    mobile1.select('.charles').classed("svgFog", false);
+    mobile1.select('.dome').style('opacity', 1);
+    mobile1.select('.sun').style('opacity', 1);
 }
 
 function setBackground(icon) {
+    backgroundReset();
+
     if (icon == 'cloudy' || icon == 'snow' || icon == 'rain' || icon == "fog") {
         mobile1.select('.background').style('background', "url('./mobile1/foggy.png'), #000000").style('background-blend-mode', "hard-light");
 
@@ -164,24 +143,9 @@ function setBackground(icon) {
             createSnow();
 
         } else if (icon == "fog") {
-            mobile1.select('.background')
-                .style('-webkit-backdrop-filter', 'blur(10px)')
-                .style('-moz-filter', 'blur(10px)')
-                .style('-o-filter', 'blur(10px)')
-                .style('-ms-filter', 'blur(10px)')
-                .style('filter', 'blur(10px)');
-            mobile1.select('.dome')
-                .style('-webkit-backdrop-filter', 'blur(2px)')
-                .style('-moz-filter', 'blur(2px)')
-                .style('-o-filter', 'blur(2px)')
-                .style('-ms-filter', 'blur(2px)')
-                .style('filter', 'blur(2px)');
-            mobile1.select('.charles').select('.background')
-                .style('-webkit-backdrop-filter', 'blur(2px)')
-                .style('-moz-filter', 'blur(2px)')
-                .style('-o-filter', 'blur(2px)')
-                .style('-ms-filter', 'blur(2px)')
-                .style('filter', 'blur(2px)');
+            mobile1.select('.background').classed("fog", true);
+            mobile1.select('.dome').classed("svgFog", true);
+//            mobile1.select('.charles').classed("svgFog", true);
         }
 
     } else if (icon.includes('partly-cloudy')) {
