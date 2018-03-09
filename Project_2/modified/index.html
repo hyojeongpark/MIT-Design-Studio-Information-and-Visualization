@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App - Project 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rkv2ylc.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row header">
+            <h1 class="title">Project 2: <br>Weather App</h1>
+            <h5 class="credit">4.032 Design Studio: Information and Visualization, Spring 2018<br>by Haley Park</h5>
+        </div>
+        <div class="row menu">
+            <h4 id="final" class="active">Final Visualizations</h4>
+            <h4 id="sketches">Sketches</h4>
+        </div>
+        <div class="final">
+            <div class="row">
+                <p>Final visualizations - development in progress.</p><br><br>
+            </div>
+            <div class="row">
+                <div class="description">
+                    <h3>First Dashboard</h3>
+                    <p>The SVG icons may not load the first time you open the page. <br>Screen size is based on iPhone X.</p><br>
+                    <span>Variations</span>
+                    <ul>
+                        <li><span id="sunny">Sunny</span></li>
+                        <li><span id="partly-cloudy">Partly Cloudy</span></li>
+                        <li><span id="cloudy">Cloudy</span></li>
+                        <li><span id="rainy">Rainy</span></li>
+                        <li><span id="snowy">Snowy</span></li>
+                        <li><span id="foggy">Foggy</span></li>
+                        <li><span id="default">Set back to default</span></li>
+                    </ul>
+                </div>
+                <div id="mobile1">
+                    <div class="background"></div>
+                    <div class="today">
+                        <h1>Cambridge</h1>
+                        <h2 class="todayTemp">00</h2>
+                        <h4 class="f">°F</h4>
+                        <h4 class="c">/C</h4>
+                        <div class="sun"></div>
+                    </div>
+                    <svg class="dome" width="375px" height="258px" viewBox="0 0 375 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="50%" x2="50%" y2="99.2582641%" id="linearGradient-1">
+            <stop stop-color="#E3E3E3" offset="0%"></stop>
+            <stop stop-color="#A4A4A4" offset="100%"></stop>
+        </linearGradient>
+        <path d="M110.431677,0 C154.105617,0 209.846006,38.4245136 219.041132,88.4216442 L0,88.4216442 C9.19512594,38.4245136 66.7577364,0 110.431677,0 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="2.42546237%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#A0A0A0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#CFCFCF" offset="0%"></stop>
+            <stop stop-color="#BCBBBB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="16.3040336%" x2="50%" y2="78.8470164%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#DADADA" offset="100%"></stop>
+        </linearGradient>
+        <path d="M199.650655,47.0742358 L20,47.0742358 C42.8257082,18.7395396 80.0647302,0 110.537094,0 C141.009458,0 177.36068,18.7395396 199.650655,47.0742358 Z" id="path-7"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#DCDCDC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#BDBCBC" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-11" x="0" y="8" width="385" height="22.5396825"></rect>
+        <filter x="-2.2%" y="-37.7%" width="104.4%" height="175.4%" filterUnits="objectBoundingBox" id="filter-12">
+            <feGaussianBlur stdDeviation="8" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118319746 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-13">
+            <stop stop-color="#ABABAB" offset="0%"></stop>
+            <stop stop-color="#D9D9D9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-14" x="0" y="140" width="385" height="15"></rect>
+        <filter x="-2.2%" y="-56.7%" width="104.4%" height="213.3%" filterUnits="objectBoundingBox" id="filter-15">
+            <feGaussianBlur stdDeviation="8" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118319746 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-16">
+            <stop stop-color="#A8A7A7" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="6.35306555%" x2="50%" y2="100%" id="linearGradient-17">
+            <stop stop-color="#8E8E8E" offset="0%"></stop>
+            <stop stop-color="#D2CECE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.92025722%" x2="50%" y2="100%" id="linearGradient-18">
+            <stop stop-color="#848484" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-19">
+            <stop stop-color="#C5C5C5" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="6.22795864%" x2="50%" y2="100%" id="linearGradient-20">
+            <stop stop-color="#040404" offset="0%"></stop>
+            <stop stop-color="#6A6A6A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-21">
+            <stop stop-color="#D2CECE" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-22">
+            <stop stop-color="#D2D1D1" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-23">
+            <stop stop-color="#D2CECE" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.94">
+        <g id="iPhone-X">
+            <g id="The-Instvitvte-Copy" transform="translate(-5.000000, 0.000000)">
+                <g id="dome" transform="translate(83.000000, 0.000000)">
+                    <g id="Rectangle-4-Copy">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <rect id="Rectangle-4" fill="url(#linearGradient-4)" mask="url(#mask-3)" x="-5.17647059" y="64.7427378" width="228.968825" height="4.80349345"></rect>
+                        <rect fill="url(#linearGradient-5)" mask="url(#mask-3)" x="-5.17647059" y="46.6147712" width="228.968825" height="4.80349345"></rect>
+                    </g>
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="url(#linearGradient-6)" xlink:href="#path-7"></use>
+                    <path d="M12.997242,43.7117904 L205.081361,43.7117904" id="Line" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,36.0262009 L205.081361,36.0262009" id="Line-Copy-4" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,41.790393 L205.081361,41.790393" id="Line-Copy-2" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,34.1048035 L205.081361,34.1048035" id="Line-Copy-5" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,45.6331878 L205.081361,45.6331878" id="Line-Copy-3" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,39.8689956 L205.081361,39.8689956" id="Line-Copy-6" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,37.9475983 L205.081361,37.9475983" id="Line-Copy" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,32.1834061 L205.081361,32.1834061" id="Line-Copy-7" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                </g>
+                <g id="Group-Copy" transform="translate(0.000000, 103.000000)">
+                    <rect id="Rectangle-2" fill="url(#linearGradient-9)" x="0" y="0" width="385" height="7.88888889"></rect>
+                    <text id="000000" font-family="Gotham-Light, Gotham" font-size="24" font-weight="normal" letter-spacing="3.4000001" fill="#FFFFFF">
+                        <tspan x="142.9" y="35.5714286">00000</tspan>
+                        <tspan x="183.78" y="62.5714286">0</tspan>
+                    </text>
+                    <rect id="Rectangle-2-Copy-2" fill="#C5C5C5" x="0" y="30.4285714" width="385" height="7.88888889"></rect>
+                    <text id="000000" font-family="Gotham-Light, Gotham" font-size="24" font-weight="normal" letter-spacing="3.4000001" fill="#FFFFFF">
+                        <tspan x="142.9" y="35.5714286">00000</tspan>
+                        <tspan x="183.78" y="62.5714286">0</tspan>
+                    </text>
+                    <g id="Rectangle-2-Copy">
+                        <use fill="url(#linearGradient-10)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                    </g>
+                    <g id="Rectangle-2-Copy-38">
+                        <use fill="url(#linearGradient-13)" fill-rule="evenodd" xlink:href="#path-14"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(23.000000, 78.000000)">
+                    <rect id="Rectangle-2" fill="url(#linearGradient-9)" x="0" y="0" width="340" height="38"></rect>
+                    <rect id="Rectangle-2-Copy" fill="url(#linearGradient-16)" x="7.10447761" y="7.79487179" width="326.80597" height="22.4102564"></rect>
+                </g>
+                <rect id="Rectangle-2-Copy-3" fill="url(#linearGradient-17)" x="23" y="119" width="340" height="22"></rect>
+                <rect id="Rectangle-2-Copy-16" fill="url(#linearGradient-18)" x="5" y="141" width="375" height="102"></rect>
+                <rect id="Rectangle-2-Copy-15" fill="url(#linearGradient-19)" x="23" y="141" width="340" height="102"></rect>
+                <rect id="Rectangle-2-Copy-37" fill="url(#linearGradient-19)" opacity="0.753113678" style="mix-blend-mode: multiply;" x="38" y="142" width="310" height="94"></rect>
+                <rect id="Rectangle-2-Copy-14" fill="url(#linearGradient-20)" x="46" y="142" width="294" height="94"></rect>
+                <path d="M23,135 L363,135" id="Line-2" stroke="#BBBBBB" stroke-width="2"></path>
+                <g id="pillars" transform="translate(43.000000, 142.000000)">
+                    <rect id="Rectangle-2-Copy-4" fill="url(#linearGradient-21)" x="2" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-8" fill="url(#linearGradient-21)" x="95" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-5" fill="url(#linearGradient-21)" x="33" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-9" fill="url(#linearGradient-21)" x="158" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-6" fill="url(#linearGradient-21)" x="64" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-10" fill="url(#linearGradient-21)" x="188" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-12" fill="url(#linearGradient-21)" x="220" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-7" fill="url(#linearGradient-21)" x="127" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-11" fill="url(#linearGradient-21)" x="250" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-13" fill="url(#linearGradient-21)" x="282" y="0" width="15" height="94"></rect>
+                    <g id="bottom_stones1" transform="translate(0.000000, 91.000000)" fill="url(#linearGradient-22)">
+                        <rect id="Rectangle-2-Copy-26" x="0" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-17" x="30.9610239" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-18" x="61.9220477" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-19" x="92.8830716" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-20" x="123.844095" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-21" x="154.805119" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-22" x="185.766143" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-23" x="216.727167" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-25" x="247.688191" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-24" x="278.649215" y="0" width="20.3507853" height="3"></rect>
+                    </g>
+                    <g id="top_stones" transform="translate(1.000000, 0.000000)" fill="url(#linearGradient-23)">
+                        <rect id="Rectangle-2-Copy-26" x="0" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-17" x="31.0844327" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-18" x="62.1688654" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-19" x="93.2532982" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-20" x="124.337731" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-21" x="155.422164" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-22" x="186.506596" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-23" x="217.591029" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-25" x="248.675462" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-24" x="279.759894" y="0" width="17.2401055" height="4"></rect>
+                    </g>
+                    <g id="lines-copy-8" transform="translate(289.000000, 46.500000) rotate(-90.000000) translate(-289.000000, -46.500000) translate(246.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-10" transform="translate(258.000000, 46.500000) rotate(-90.000000) translate(-258.000000, -46.500000) translate(215.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-11" transform="translate(227.000000, 46.500000) rotate(-90.000000) translate(-227.000000, -46.500000) translate(184.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-12" transform="translate(196.000000, 46.500000) rotate(-90.000000) translate(-196.000000, -46.500000) translate(153.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-13" transform="translate(165.000000, 46.500000) rotate(-90.000000) translate(-165.000000, -46.500000) translate(122.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-14" transform="translate(133.000000, 46.500000) rotate(-90.000000) translate(-133.000000, -46.500000) translate(90.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-15" transform="translate(103.000000, 46.500000) rotate(-90.000000) translate(-103.000000, -46.500000) translate(60.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-16" transform="translate(72.000000, 46.500000) rotate(-90.000000) translate(-72.000000, -46.500000) translate(29.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-17" transform="translate(41.000000, 46.500000) rotate(-90.000000) translate(-41.000000, -46.500000) translate(-2.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-18" transform="translate(10.000000, 46.500000) rotate(-90.000000) translate(-10.000000, -46.500000) translate(-33.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="bottom_stones2" transform="translate(1.000000, 89.000000)" fill="url(#linearGradient-23)">
+                        <rect id="Rectangle-2-Copy-27" x="0" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-29" x="31.0844327" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-30" x="62.1688654" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-31" x="93.2532982" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-32" x="124.337731" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-33" x="155.422164" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-34" x="186.506596" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-35" x="217.591029" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-36" x="248.675462" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-28" x="279.759894" y="0" width="17.2401055" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                    <div class="charles">
+                        <div class="background"></div>
+                        <svg class="reflection" viewBox="0 0 375 260" preserveAspectRatio="none" width="375px" height="230px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="50%" x2="50%" y2="99.2582641%" id="linearGradient-1">
+            <stop stop-color="#E3E3E3" offset="0%"></stop>
+            <stop stop-color="#A4A4A4" offset="100%"></stop>
+        </linearGradient>
+        <path d="M110.431677,0 C154.105617,0 209.846006,38.4245136 219.041132,88.4216442 L0,88.4216442 C9.19512594,38.4245136 66.7577364,0 110.431677,0 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="2.42546237%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#A0A0A0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#CFCFCF" offset="0%"></stop>
+            <stop stop-color="#BCBBBB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="16.3040336%" x2="50%" y2="78.8470164%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#DADADA" offset="100%"></stop>
+        </linearGradient>
+        <path d="M199.650655,47.0742358 L20,47.0742358 C42.8257082,18.7395396 80.0647302,0 110.537094,0 C141.009458,0 177.36068,18.7395396 199.650655,47.0742358 Z" id="path-7"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#DCDCDC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#BDBCBC" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-11" x="0" y="8" width="385" height="22.5396825"></rect>
+        <filter x="-2.2%" y="-37.7%" width="104.4%" height="175.4%" filterUnits="objectBoundingBox" id="filter-12">
+            <feGaussianBlur stdDeviation="8" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118319746 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-13">
+            <stop stop-color="#ABABAB" offset="0%"></stop>
+            <stop stop-color="#D9D9D9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-14" x="0" y="140" width="385" height="15"></rect>
+        <filter x="-2.2%" y="-56.7%" width="104.4%" height="213.3%" filterUnits="objectBoundingBox" id="filter-15">
+            <feGaussianBlur stdDeviation="8" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.118319746 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-16">
+            <stop stop-color="#A8A7A7" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="6.35306555%" x2="50%" y2="100%" id="linearGradient-17">
+            <stop stop-color="#8E8E8E" offset="0%"></stop>
+            <stop stop-color="#D2CECE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.92025722%" x2="50%" y2="100%" id="linearGradient-18">
+            <stop stop-color="#848484" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-19">
+            <stop stop-color="#C5C5C5" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="6.22795864%" x2="50%" y2="100%" id="linearGradient-20">
+            <stop stop-color="#040404" offset="0%"></stop>
+            <stop stop-color="#6A6A6A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-21">
+            <stop stop-color="#D2CECE" offset="0%"></stop>
+            <stop stop-color="#E5E5E5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-22">
+            <stop stop-color="#D2D1D1" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="3.3462213%" x2="50%" y2="100%" id="linearGradient-23">
+            <stop stop-color="#D2CECE" offset="0%"></stop>
+            <stop stop-color="#DEDDDD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.94">
+        <g id="iPhone-X">
+            <g id="The-Instvitvte-Copy" transform="translate(-5.000000, 0.000000)">
+                <g id="dome" transform="translate(83.000000, 0.000000)">
+                    <g id="Rectangle-4-Copy">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <rect id="Rectangle-4" fill="url(#linearGradient-4)" mask="url(#mask-3)" x="-5.17647059" y="64.7427378" width="228.968825" height="4.80349345"></rect>
+                        <rect fill="url(#linearGradient-5)" mask="url(#mask-3)" x="-5.17647059" y="46.6147712" width="228.968825" height="4.80349345"></rect>
+                    </g>
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="url(#linearGradient-6)" xlink:href="#path-7"></use>
+                    <path d="M12.997242,43.7117904 L205.081361,43.7117904" id="Line" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,36.0262009 L205.081361,36.0262009" id="Line-Copy-4" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,41.790393 L205.081361,41.790393" id="Line-Copy-2" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,34.1048035 L205.081361,34.1048035" id="Line-Copy-5" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,45.6331878 L205.081361,45.6331878" id="Line-Copy-3" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,39.8689956 L205.081361,39.8689956" id="Line-Copy-6" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,37.9475983 L205.081361,37.9475983" id="Line-Copy" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    <path d="M12.997242,32.1834061 L205.081361,32.1834061" id="Line-Copy-7" stroke="#D2D2D2" stroke-linecap="square" mask="url(#mask-8)"></path>
+                </g>
+                <g id="Group-Copy" transform="translate(0.000000, 103.000000)">
+                    <rect id="Rectangle-2" fill="url(#linearGradient-9)" x="0" y="0" width="385" height="7.88888889"></rect>
+                    <text id="000000" font-family="Gotham-Light, Gotham" font-size="24" font-weight="normal" letter-spacing="3.4000001" fill="#FFFFFF">
+                        <tspan x="142.9" y="35.5714286">00000</tspan>
+                        <tspan x="183.78" y="62.5714286">0</tspan>
+                    </text>
+                    <rect id="Rectangle-2-Copy-2" fill="#C5C5C5" x="0" y="30.4285714" width="385" height="7.88888889"></rect>
+                    <text id="000000" font-family="Gotham-Light, Gotham" font-size="24" font-weight="normal" letter-spacing="3.4000001" fill="#FFFFFF">
+                        <tspan x="142.9" y="35.5714286">00000</tspan>
+                        <tspan x="183.78" y="62.5714286">0</tspan>
+                    </text>
+                    <g id="Rectangle-2-Copy">
+                        <use fill="url(#linearGradient-10)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                    </g>
+                    <g id="Rectangle-2-Copy-38">
+                        <use fill="url(#linearGradient-13)" fill-rule="evenodd" xlink:href="#path-14"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(23.000000, 78.000000)">
+                    <rect id="Rectangle-2" fill="url(#linearGradient-9)" x="0" y="0" width="340" height="38"></rect>
+                    <rect id="Rectangle-2-Copy" fill="url(#linearGradient-16)" x="7.10447761" y="7.79487179" width="326.80597" height="22.4102564"></rect>
+                </g>
+                <rect id="Rectangle-2-Copy-3" fill="url(#linearGradient-17)" x="23" y="119" width="340" height="22"></rect>
+                <rect id="Rectangle-2-Copy-16" fill="url(#linearGradient-18)" x="5" y="141" width="375" height="102"></rect>
+                <rect id="Rectangle-2-Copy-15" fill="url(#linearGradient-19)" x="23" y="141" width="340" height="102"></rect>
+                <rect id="Rectangle-2-Copy-37" fill="url(#linearGradient-19)" opacity="0.753113678" style="mix-blend-mode: multiply;" x="38" y="142" width="310" height="94"></rect>
+                <rect id="Rectangle-2-Copy-14" fill="url(#linearGradient-20)" x="46" y="142" width="294" height="94"></rect>
+                <path d="M23,135 L363,135" id="Line-2" stroke="#BBBBBB" stroke-width="2"></path>
+                <g id="pillars" transform="translate(43.000000, 142.000000)">
+                    <rect id="Rectangle-2-Copy-4" fill="url(#linearGradient-21)" x="2" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-8" fill="url(#linearGradient-21)" x="95" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-5" fill="url(#linearGradient-21)" x="33" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-9" fill="url(#linearGradient-21)" x="158" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-6" fill="url(#linearGradient-21)" x="64" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-10" fill="url(#linearGradient-21)" x="188" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-12" fill="url(#linearGradient-21)" x="220" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-7" fill="url(#linearGradient-21)" x="127" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-11" fill="url(#linearGradient-21)" x="250" y="0" width="15" height="94"></rect>
+                    <rect id="Rectangle-2-Copy-13" fill="url(#linearGradient-21)" x="282" y="0" width="15" height="94"></rect>
+                    <g id="bottom_stones1" transform="translate(0.000000, 91.000000)" fill="url(#linearGradient-22)">
+                        <rect id="Rectangle-2-Copy-26" x="0" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-17" x="30.9610239" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-18" x="61.9220477" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-19" x="92.8830716" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-20" x="123.844095" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-21" x="154.805119" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-22" x="185.766143" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-23" x="216.727167" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-25" x="247.688191" y="0" width="20.3507853" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-24" x="278.649215" y="0" width="20.3507853" height="3"></rect>
+                    </g>
+                    <g id="top_stones" transform="translate(1.000000, 0.000000)" fill="url(#linearGradient-23)">
+                        <rect id="Rectangle-2-Copy-26" x="0" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-17" x="31.0844327" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-18" x="62.1688654" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-19" x="93.2532982" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-20" x="124.337731" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-21" x="155.422164" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-22" x="186.506596" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-23" x="217.591029" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-25" x="248.675462" y="0" width="17.2401055" height="4"></rect>
+                        <rect id="Rectangle-2-Copy-24" x="279.759894" y="0" width="17.2401055" height="4"></rect>
+                    </g>
+                    <g id="lines-copy-8" transform="translate(289.000000, 46.500000) rotate(-90.000000) translate(-289.000000, -46.500000) translate(246.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-10" transform="translate(258.000000, 46.500000) rotate(-90.000000) translate(-258.000000, -46.500000) translate(215.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-11" transform="translate(227.000000, 46.500000) rotate(-90.000000) translate(-227.000000, -46.500000) translate(184.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-12" transform="translate(196.000000, 46.500000) rotate(-90.000000) translate(-196.000000, -46.500000) translate(153.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-13" transform="translate(165.000000, 46.500000) rotate(-90.000000) translate(-165.000000, -46.500000) translate(122.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-14" transform="translate(133.000000, 46.500000) rotate(-90.000000) translate(-133.000000, -46.500000) translate(90.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-15" transform="translate(103.000000, 46.500000) rotate(-90.000000) translate(-103.000000, -46.500000) translate(60.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-16" transform="translate(72.000000, 46.500000) rotate(-90.000000) translate(-72.000000, -46.500000) translate(29.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-17" transform="translate(41.000000, 46.500000) rotate(-90.000000) translate(-41.000000, -46.500000) translate(-2.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="lines-copy-18" transform="translate(10.000000, 46.500000) rotate(-90.000000) translate(-10.000000, -46.500000) translate(-33.000000, 40.000000)" stroke="#D2D2D2" stroke-linecap="square">
+                        <path d="M0.225877725,9.41356617 L85.6076579,9.41356617" id="Line-Copy-2"></path>
+                        <path d="M0.225877725,3.18727043 L85.6076579,3.18727043" id="Line-Copy-5"></path>
+                        <path d="M0.225877725,11.4889981 L85.6076579,11.4889981" id="Line-Copy-3"></path>
+                        <path d="M0.225877725,7.33813426 L85.6076579,7.33813426" id="Line-Copy-6"></path>
+                        <path d="M0.225877725,5.26270235 L85.6076579,5.26270235" id="Line-Copy"></path>
+                        <path d="M0.225877725,1.11183852 L85.6076579,1.11183852" id="Line-Copy-7"></path>
+                    </g>
+                    <g id="bottom_stones2" transform="translate(1.000000, 89.000000)" fill="url(#linearGradient-23)">
+                        <rect id="Rectangle-2-Copy-27" x="0" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-29" x="31.0844327" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-30" x="62.1688654" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-31" x="93.2532982" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-32" x="124.337731" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-33" x="155.422164" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-34" x="186.506596" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-35" x="217.591029" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-36" x="248.675462" y="0" width="17.2401055" height="2"></rect>
+                        <rect id="Rectangle-2-Copy-28" x="279.759894" y="0" width="17.2401055" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                        <div class="content">
+                            <h5 class="todayDate">Sunday, March 4th</h5>
+                            <div class="times">
+                                <div class="hourly">
+                                    <span class="timeNotation time-2">time-2</span>
+                                    <div class="weather-icon-hrBefore2"></div>
+                                    <div class="temperature temp-1"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation now">NOW</span>
+                                    <div class="weather-icon weather-icon-now"></div>
+                                    <div class="temperature temp-now"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation time-1">time-1</span>
+                                    <div class="weather-icon-hrBefore"></div>
+                                    <div class="temperature temp-plus1"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation timePlus1">time-2</span>
+                                    <div class="weather-icon-hrAfter"></div>
+                                    <div class="temperature temp-plus2"></div>
+                                </div>
+                                <div class="hourly">
+                                    <span class="timeNotation timePlus2">time-1</span>
+                                    <div class="weather-icon-hrAfter2"></div>
+                                    <div class="temperature temp-plus3"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="description">
+                    <h3>Second Dashboard</h3>
+                </div>
+                <div id="mobile2">
+                    <div class="today">
+                        <h1>Cambridge</h1>
+                        <div class="sun"></div>
+                        <h2 class="todayTemp">00</h2>
+                        <h4 class="f">°F</h4>
+                        <h4 class="c">/C</h4>
+                    </div>
+                    <div class="content">
+                        <div class="times">
+                            <div class="hourly">
+                                <span class="timeNotation time-2">time-2</span>
+                                <div class="weather-icon-hrBefore2"></div>
+                                <div class="temperature temp-1"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation now">NOW</span>
+                                <div class="weather-icon weather-icon-now"></div>
+                                <div class="temperature temp-now"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation time-1">time-1</span>
+                                <div class="weather-icon-hrBefore"></div>
+                                <div class="temperature temp-plus1"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation timePlus1">time-2</span>
+                                <div class="weather-icon-hrAfter"></div>
+                                <div class="temperature temp-plus2"></div>
+                            </div>
+                            <div class="hourly">
+                                <span class="timeNotation timePlus2">time-1</span>
+                                <div class="weather-icon-hrAfter2"></div>
+                                <div class="temperature temp-plus3"></div>
+                            </div>
+                        </div>
+                        <h5 class="todayDate">Sunday, March 4th</h5>
+                        <div class="days">
+                            <div class="day">
+                                <span class="weekday">Mon</span>
+                                <div class="day-icon day-icon-0"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Mon</span>
+                                <div class="day-icon day-icon-1"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Tue</span>
+                                <div class="day-icon day-icon-2"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Wed</span>
+                                <div class="day-icon day-icon-3"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Thu</span>
+                                <div class="day-icon day-icon-4"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Fri</span>
+                                <div class="day-icon day-icon-5"></div>
+                            </div>
+                            <div class="day">
+                                <span class="weekday">Sat</span>
+                                <div class="day-icon day-icon-6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sketches">
+            <div class="block">
+                <h4>Initial Sketches</h4>
+                <p>Initial sketches drawn on paper.</p>
+                <img src="papersketch.png">
+            </div>
+            <div class="block">
+                <h4>Refined sketches - Concepts</h4>
+                <p>Screen size is based on iPhone X.</p>
+
+                <div class="design">
+                    <div class="sketch">
+                        <h5>Sketch 1: More Abstract</h5>
+                        <img src="sketch_1.png">
+                    </div>
+                    <div class="sketch">
+                        <h5>Sketch 2: More Literal</h5>
+                        <img src="sketch_2.png">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <h5>Sketch 1 - Elaborate Sketches</h5>
+                <div class="sketch">
+                    <img src="sketch_1_cloudy.png">
+                    <p>Cloudy</p>
+                </div>
+                <div class="sketch">
+                    <img src="sketch_1_partly_cloudy.png">
+                    <p>Partly cloudy</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="document.js"></script>
+    <script src="mobile1.js"></script>
+    <script src="mobile2.js"></script>
+</body>
+
+</html>

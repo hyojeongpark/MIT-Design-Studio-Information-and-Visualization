@@ -1,0 +1,17 @@
+<svg width="34px" height="29px" viewBox="0 0 34 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cloudy" transform="translate(-268.000000, -675.000000)" stroke="#FFFFFF">
+            <g id="rain" transform="translate(270.000000, 677.000000)">
+                <g>
+                    <path d="M4,26.3210862 L6.50025773,16.588111" id="Line-Copy-2" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M8.47710063,26.1545176 L11.0231571,16.588111" id="Line-Copy-3" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M13,26.3210862 L15.5002577,16.588111" id="Line-Copy-4" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M17.4771006,26.1545176 L20.0231571,16.588111" id="Line-Copy-5" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M22,26.3210862 L24.5002577,16.588111" id="Line-Copy-6" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M4.22618743,6.65290384 C4.97486614,5.17180612 6.54278857,4.19835439 8.29787234,4.19835439 C8.56777201,4.19835439 8.83282072,4.22132649 9.09085218,4.26547172 L9.18856127,4.07820132 C10.7053815,1.17104549 13.7981031,-0.7 17.2340426,-0.7 C21.68175,-0.7 25.4504449,2.42721907 26.1256006,6.62508138 L26.1346122,6.68111231 C28.7000302,6.96884924 30.7,9.07076189 30.7,11.6335917 C30.7,14.39398 28.3798061,16.6196518 25.5319149,16.6196518 L4.46808511,16.6196518 C1.62019395,16.6196518 -0.7,14.39398 -0.7,11.6335917 C-0.7,8.95178628 1.48997135,6.77468615 4.22618743,6.65290384 Z" id="Cloud" stroke-width="1.4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

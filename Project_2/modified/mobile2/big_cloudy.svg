@@ -1,0 +1,210 @@
+<svg width="375px" height="812px" viewBox="0 0 375 812" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="79.0968776%" y1="92.4090656%" x2="79.0968776%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#F4F4F4" offset="0%"></stop>
+            <stop stop-color="#1B0083" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#1B0083" offset="0%"></stop>
+            <stop stop-color="#1B0083" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cloudy">
+            <rect id="Rectangle-Copy" fill="#F4F4F4" x="0" y="0" width="375" height="812"></rect>
+            <rect id="Rectangle" fill="url(#linearGradient-1)" transform="translate(187.500000, 748.000000) scale(1, -1) translate(-187.500000, -748.000000) " x="0" y="684" width="375" height="128"></rect>
+            <text id="SUNNY" font-family="SanFranciscoDisplay-Regular, San Francisco Display" font-size="19" font-weight="normal" letter-spacing="3.20888996" fill="#1B0083">
+                <tspan x="269.851546" y="169">SUNNY</tspan>
+            </text>
+            <text id="45°F" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="40" font-weight="300" letter-spacing="6.75555992" fill="#1B0083">
+                <tspan x="87" y="214">45°F</tspan>
+            </text>
+            <text id="CAMBRIDGE" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="30" font-weight="300" letter-spacing="13.1700001" fill="#1B0083">
+                <tspan x="57.4982224" y="100">CAMBRIDG</tspan>
+                <tspan x="301.491035" y="100">E</tspan>
+            </text>
+            <path d="M23,341 L353,341" id="Line-Copy" stroke="#1B0083" stroke-width="0.5" stroke-linecap="square"></path>
+            <g id="Group-7" transform="translate(32.000000, 249.000000)">
+                <g id="Group-3" transform="translate(72.750000, 0.000000)">
+                    <text id="45°" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                        <tspan x="2.48535156" y="66">45°</tspan>
+                    </text>
+                    <g id="Little-cloudy" transform="translate(0.000000, 23.000000)">
+                        <circle id="Oval-Copy" fill="#FFC130" cx="7.875" cy="7.875" r="7.875"></circle>
+                        <path d="M24.9654255,20.6462766 L6.53457447,20.6462766 C4.375376,20.6462766 2.625,18.8959006 2.625,16.7367021 C2.625,14.5775037 4.375376,12.8271277 6.53457447,12.8271277 C6.59797072,12.8271277 6.66101454,12.8286366 6.72367197,12.8316205 C7.18243101,11.5277294 8.42488565,10.5930851 9.8856383,10.5930851 C11.5370805,10.5930851 12.9095105,11.7876776 13.1859434,13.3598776 C13.2192561,13.1874221 13.2367021,13.0093122 13.2367021,12.8271277 C13.2367021,11.5496964 12.3789746,10.4725983 11.208021,10.1403346 C12.3995911,7.75956729 14.8613022,6.125 17.7047872,6.125 C21.3351845,6.125 24.3432634,8.78946006 24.8801719,12.2695282 C22.7603403,12.3148797 21.0558511,14.0474831 21.0558511,16.1781915 L21.0954432,16.1781915 C21.3664491,14.283559 22.9958533,12.8271277 24.9654255,12.8271277 C27.124624,12.8271277 28.875,14.5775037 28.875,16.7367021 C28.875,18.8959006 27.124624,20.6462766 24.9654255,20.6462766 Z" id="Cloud-Copy" fill="#1B0083"></path>
+                    </g>
+                    <text id="11:00" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                        <tspan x="0.119628906" y="13">11:00</tspan>
+                    </text>
+                </g>
+                <g id="Group-2" fill="#1B0083">
+                    <text id="42°" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300">
+                        <tspan x="4.00732422" y="66">42°</tspan>
+                    </text>
+                    <text id="10:00" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300">
+                        <tspan x="1.29003906" y="13">10:00</tspan>
+                    </text>
+                    <g id="Cloudy" transform="translate(0.000000, 25.000000)">
+                        <path d="M27.6923077,18 L4.84615385,18 C2.16969685,18 0,15.8303032 0,13.1538462 C0,10.4773892 2.16969685,8.30769231 4.84615385,8.30769231 C4.92473733,8.30769231 5.00288396,8.30956274 5.08055163,8.3132615 C5.64921119,6.69700969 7.18930881,5.53846154 9,5.53846154 C11.0470624,5.53846154 12.7482724,7.01923112 13.0909277,8.96806809 C13.1322207,8.75429899 13.1538462,8.5335211 13.1538462,8.30769231 C13.1538462,6.72423906 12.0906411,5.3891108 10.6391733,4.97724996 C12.1161964,2.02614495 15.1676361,0 18.6923077,0 C23.1924045,0 26.9211001,3.30275928 27.5866307,7.61651404 C24.9589713,7.67273003 22.8461538,9.82039663 22.8461538,12.4615385 L22.8952307,12.4615385 C23.2311589,10.113027 25.2509039,8.30769231 27.6923077,8.30769231 C30.3687647,8.30769231 32.5384615,10.4773892 32.5384615,13.1538462 C32.5384615,15.8303032 30.3687647,18 27.6923077,18 Z" id="Cloud"></path>
+                    </g>
+                </g>
+                <g id="Group-6" transform="translate(279.000000, 0.000000)" fill="#1B0083">
+                    <path d="M27.6923077,43 L4.84615385,43 C2.16969685,43 0,40.8303032 0,38.1538462 C0,35.4773892 2.16969685,33.3076923 4.84615385,33.3076923 C4.92473733,33.3076923 5.00288396,33.3095627 5.08055163,33.3132615 C5.64921119,31.6970097 7.18930881,30.5384615 9,30.5384615 C11.0470624,30.5384615 12.7482724,32.0192311 13.0909277,33.9680681 C13.1322207,33.754299 13.1538462,33.5335211 13.1538462,33.3076923 C13.1538462,31.7242391 12.0906411,30.3891108 10.6391733,29.97725 C12.1161964,27.0261449 15.1676361,25 18.6923077,25 C23.1924045,25 26.9211001,28.3027593 27.5866307,32.616514 C24.9589713,32.67273 22.8461538,34.8203966 22.8461538,37.4615385 L22.8952307,37.4615385 C23.2311589,35.113027 25.2509039,33.3076923 27.6923077,33.3076923 C30.3687647,33.3076923 32.5384615,35.4773892 32.5384615,38.1538462 C32.5384615,40.8303032 30.3687647,43 27.6923077,43 Z" id="Cloud-Copy-2"></path>
+                    <text id="45°" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300">
+                        <tspan x="4.48535156" y="66">45°</tspan>
+                    </text>
+                    <text id="14:00" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300">
+                        <tspan x="1.25244141" y="13">14:00</tspan>
+                    </text>
+                </g>
+                <g id="Group-4" transform="translate(141.500000, 0.000000)">
+                    <text id="46°" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                        <tspan x="1.41064453" y="66">46°</tspan>
+                    </text>
+                    <text id="Now" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                        <tspan x="0.446777344" y="13">Now</tspan>
+                    </text>
+                    <g id="Sunny" transform="translate(3.000000, 23.000000)" fill="#FFC130">
+                        <circle id="Oval" cx="10.5" cy="10.5" r="10.5"></circle>
+                    </g>
+                </g>
+                <g id="Group-5" transform="translate(208.250000, 0.000000)">
+                    <text id="43°" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                        <tspan x="3.42822266" y="66">43°</tspan>
+                    </text>
+                    <text id="13:00" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                        <tspan x="0.3515625" y="13">13:00</tspan>
+                    </text>
+                    <circle id="Oval-Copy-2" fill="#FFC130" cx="15.5" cy="33.5" r="10.5"></circle>
+                </g>
+            </g>
+            <text id="Mon" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="309.248047" y="382">Mon</tspan>
+            </text>
+            <g id="Group-13" transform="translate(319.000000, 462.000000)">
+                <path d="M6.83333333,26 L6.83333333,133" id="Line-Copy-4" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="24" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.182128906" y="13">24</tspan>
+                </text>
+                <text id="12" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.24853516" y="157">12</tspan>
+                </text>
+            </g>
+            <g id="Rain" transform="translate(313.000000, 395.000000)">
+                <g id="Group">
+                    <path d="M4,21.5229616 L7.62346663,8" id="Line-Copy-2" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M7.5,21.5229616 L11.1234666,8" id="Line-Copy-3" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M11,21.5229616 L14.6234666,8" id="Line-Copy-4" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M14.5,21.5229616 L18.1234666,8" id="Line-Copy-5" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M18,21.5229616 L21.6234666,8" id="Line-Copy-6" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M21.5384615,14 L3.76923077,14 C1.68754199,14 0,12.312458 0,10.2307692 C0,8.14908046 1.68754199,6.46153846 3.76923077,6.46153846 C3.83035126,6.46153846 3.89113197,6.46299324 3.95154015,6.46587006 C4.39383092,5.20878531 5.59168463,4.30769231 7,4.30769231 C8.59215967,4.30769231 9.91532298,5.45940199 10.1818327,6.97516407 C10.2139494,6.80889922 10.2307692,6.63718308 10.2307692,6.46153846 C10.2307692,5.22996371 9.40383194,4.19153062 8.27491256,3.87119441 C9.4237083,1.57589052 11.7970503,0 14.5384615,0 C18.0385368,0 20.9386334,2.56881278 21.4562683,5.92395536 C19.4125332,5.96767891 17.7692308,7.63808627 17.7692308,9.69230769 L17.8074017,9.69230769 C18.0686792,7.8656877 19.6395919,6.46153846 21.5384615,6.46153846 C23.6201503,6.46153846 25.3076923,8.14908046 25.3076923,10.2307692 C25.3076923,12.312458 23.6201503,14 21.5384615,14 Z" id="Cloud-Copy-5" fill="#1B0083"></path>
+                </g>
+            </g>
+            <g id="Group-12" transform="translate(269.500000, 462.000000)">
+                <path d="M6.83333333,26 L6.83333333,133" id="Line-Copy-3" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="36" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.0693359375" y="13">36</tspan>
+                </text>
+                <text id="12" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.24853516" y="157">12</tspan>
+                </text>
+            </g>
+            <text id="Sun-Copy" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="261.549805" y="382">Sun</tspan>
+            </text>
+            <g id="Rain" transform="translate(263.500000, 395.000000)">
+                <g id="Group">
+                    <path d="M4,21.5229616 L7.62346663,8" id="Line-Copy-2" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M7.5,21.5229616 L11.1234666,8" id="Line-Copy-3" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M11,21.5229616 L14.6234666,8" id="Line-Copy-4" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M14.5,21.5229616 L18.1234666,8" id="Line-Copy-5" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M18,21.5229616 L21.6234666,8" id="Line-Copy-6" stroke="#0039A9" stroke-width="0.8" stroke-linecap="square"></path>
+                    <path d="M21.5384615,14 L3.76923077,14 C1.68754199,14 0,12.312458 0,10.2307692 C0,8.14908046 1.68754199,6.46153846 3.76923077,6.46153846 C3.83035126,6.46153846 3.89113197,6.46299324 3.95154015,6.46587006 C4.39383092,5.20878531 5.59168463,4.30769231 7,4.30769231 C8.59215967,4.30769231 9.91532298,5.45940199 10.1818327,6.97516407 C10.2139494,6.80889922 10.2307692,6.63718308 10.2307692,6.46153846 C10.2307692,5.22996371 9.40383194,4.19153062 8.27491256,3.87119441 C9.4237083,1.57589052 11.7970503,0 14.5384615,0 C18.0385368,0 20.9386334,2.56881278 21.4562683,5.92395536 C19.4125332,5.96767891 17.7692308,7.63808627 17.7692308,9.69230769 L17.8074017,9.69230769 C18.0686792,7.8656877 19.6395919,6.46153846 21.5384615,6.46153846 C23.6201503,6.46153846 25.3076923,8.14908046 25.3076923,10.2307692 C25.3076923,12.312458 23.6201503,14 21.5384615,14 Z" id="Cloud-Copy-5" fill="#1B0083"></path>
+                </g>
+            </g>
+            <text id="Wed" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="73.5854492" y="382">Wed</tspan>
+            </text>
+            <g id="Group-8" transform="translate(82.500000, 477.000000)">
+                <path d="M7.83333333,26 L7.83333333,104" id="Line-Copy-7" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="43" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.497558594" y="13">43</tspan>
+                </text>
+                <text id="15" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.65283203" y="127">15</tspan>
+                </text>
+            </g>
+            <g transform="translate(74.500000, 397.000000)" fill="#1B0083" id="Cloud">
+                <path d="M27.6923077,18 L4.84615385,18 C2.16969685,18 0,15.8303032 0,13.1538462 C0,10.4773892 2.16969685,8.30769231 4.84615385,8.30769231 C4.92473733,8.30769231 5.00288396,8.30956274 5.08055163,8.3132615 C5.64921119,6.69700969 7.18930881,5.53846154 9,5.53846154 C11.0470624,5.53846154 12.7482724,7.01923112 13.0909277,8.96806809 C13.1322207,8.75429899 13.1538462,8.5335211 13.1538462,8.30769231 C13.1538462,6.72423906 12.0906411,5.3891108 10.6391733,4.97724996 C12.1161964,2.02614495 15.1676361,0 18.6923077,0 C23.1924045,0 26.9211001,3.30275928 27.5866307,7.61651404 C24.9589713,7.67273003 22.8461538,9.82039663 22.8461538,12.4615385 L22.8952307,12.4615385 C23.2311589,10.113027 25.2509039,8.30769231 27.6923077,8.30769231 C30.3687647,8.30769231 32.5384615,10.4773892 32.5384615,13.1538462 C32.5384615,15.8303032 30.3687647,18 27.6923077,18 Z"></path>
+            </g>
+            <circle id="Oval-Copy-3" fill="#FFC130" cx="183" cy="406.5" r="10.5"></circle>
+            <g id="Group-10" transform="translate(175.500000, 444.000000)">
+                <path d="M8,26 L8,168.081388" id="Line-Copy-2" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="48" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.401855469" y="13">48</tspan>
+                </text>
+                <text id="10" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.68359375" y="193">10</tspan>
+                </text>
+            </g>
+            <text id="Fri" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="173.858398" y="382">Fri</tspan>
+            </text>
+            <g id="Group-11" transform="translate(219.000000, 468.000000)">
+                <path d="M7.83333333,26 L7.83333333,122.749069" id="Line-Copy-8" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="43" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.497558594" y="13">43</tspan>
+                </text>
+                <text id="13" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.70751953" y="146">13</tspan>
+                </text>
+            </g>
+            <g transform="translate(211.000000, 397.000000)" fill="#1B0083" id="Cloud">
+                <path d="M27.6923077,18 L4.84615385,18 C2.16969685,18 0,15.8303032 0,13.1538462 C0,10.4773892 2.16969685,8.30769231 4.84615385,8.30769231 C4.92473733,8.30769231 5.00288396,8.30956274 5.08055163,8.3132615 C5.64921119,6.69700969 7.18930881,5.53846154 9,5.53846154 C11.0470624,5.53846154 12.7482724,7.01923112 13.0909277,8.96806809 C13.1322207,8.75429899 13.1538462,8.5335211 13.1538462,8.30769231 C13.1538462,6.72423906 12.0906411,5.3891108 10.6391733,4.97724996 C12.1161964,2.02614495 15.1676361,0 18.6923077,0 C23.1924045,0 26.9211001,3.30275928 27.5866307,7.61651404 C24.9589713,7.67273003 22.8461538,9.82039663 22.8461538,12.4615385 L22.8952307,12.4615385 C23.2311589,10.113027 25.2509039,8.30769231 27.6923077,8.30769231 C30.3687647,8.30769231 32.5384615,10.4773892 32.5384615,13.1538462 C32.5384615,15.8303032 30.3687647,18 27.6923077,18 Z"></path>
+            </g>
+            <text id="Sat" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="215.006348" y="382">Sat</tspan>
+            </text>
+            <text id="Thu" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="125.476074" y="382">Thu</tspan>
+            </text>
+            <g id="Group-9" transform="translate(132.000000, 477.000000)">
+                <path d="M6.83333333,26 L6.83333333,104" id="Line-Copy-6" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="45" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.415527344" y="13">45</tspan>
+                </text>
+                <text id="15" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.65283203" y="127">15</tspan>
+                </text>
+            </g>
+            <g id="Little-cloudy" transform="translate(126.000000, 395.000000)">
+                <circle id="Oval-Copy" fill="#FFC130" cx="7.875" cy="7.875" r="7.875"></circle>
+                <path d="M24.9654255,20.6462766 L6.53457447,20.6462766 C4.375376,20.6462766 2.625,18.8959006 2.625,16.7367021 C2.625,14.5775037 4.375376,12.8271277 6.53457447,12.8271277 C6.59797072,12.8271277 6.66101454,12.8286366 6.72367197,12.8316205 C7.18243101,11.5277294 8.42488565,10.5930851 9.8856383,10.5930851 C11.5370805,10.5930851 12.9095105,11.7876776 13.1859434,13.3598776 C13.2192561,13.1874221 13.2367021,13.0093122 13.2367021,12.8271277 C13.2367021,11.5496964 12.3789746,10.4725983 11.208021,10.1403346 C12.3995911,7.75956729 14.8613022,6.125 17.7047872,6.125 C21.3351845,6.125 24.3432634,8.78946006 24.8801719,12.2695282 C22.7603403,12.3148797 21.0558511,14.0474831 21.0558511,16.1781915 L21.0954432,16.1781915 C21.3664491,14.283559 22.9958533,12.8271277 24.9654255,12.8271277 C27.124624,12.8271277 28.875,14.5775037 28.875,16.7367021 C28.875,18.8959006 27.124624,20.6462766 24.9654255,20.6462766 Z" id="Cloud-Copy" fill="#1B0083"></path>
+            </g>
+            <text id="Tue" font-family="SanFranciscoDisplay-Light, San Francisco Display" font-size="18" font-weight="300" fill="#1B0083">
+                <tspan x="28.4165039" y="382">Tue</tspan>
+            </text>
+            <g id="Group" transform="translate(34.000000, 468.000000)">
+                <path d="M7.83333333,26 L7.83333333,122.749069" id="Line-Copy-5" stroke="url(#linearGradient-2)" stroke-width="2.5" stroke-linecap="square"></path>
+                <text id="38" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="0.432617188" y="13">38</tspan>
+                </text>
+                <text id="13" font-family="SanFranciscoDisplay-Thin, San Francisco Display" font-size="14" font-style="condensed" font-weight="300" fill="#1B0083">
+                    <tspan x="1.70751953" y="145">13</tspan>
+                </text>
+            </g>
+            <g id="Little-cloudy" transform="translate(27.000000, 395.000000)">
+                <circle id="Oval-Copy" fill="#FFC130" cx="7.875" cy="7.875" r="7.875"></circle>
+                <path d="M24.9654255,20.6462766 L6.53457447,20.6462766 C4.375376,20.6462766 2.625,18.8959006 2.625,16.7367021 C2.625,14.5775037 4.375376,12.8271277 6.53457447,12.8271277 C6.59797072,12.8271277 6.66101454,12.8286366 6.72367197,12.8316205 C7.18243101,11.5277294 8.42488565,10.5930851 9.8856383,10.5930851 C11.5370805,10.5930851 12.9095105,11.7876776 13.1859434,13.3598776 C13.2192561,13.1874221 13.2367021,13.0093122 13.2367021,12.8271277 C13.2367021,11.5496964 12.3789746,10.4725983 11.208021,10.1403346 C12.3995911,7.75956729 14.8613022,6.125 17.7047872,6.125 C21.3351845,6.125 24.3432634,8.78946006 24.8801719,12.2695282 C22.7603403,12.3148797 21.0558511,14.0474831 21.0558511,16.1781915 L21.0954432,16.1781915 C21.3664491,14.283559 22.9958533,12.8271277 24.9654255,12.8271277 C27.124624,12.8271277 28.875,14.5775037 28.875,16.7367021 C28.875,18.8959006 27.124624,20.6462766 24.9654255,20.6462766 Z" id="Cloud-Copy" fill="#1B0083"></path>
+            </g>
+            <g id="big_cloud" transform="translate(27.000000, 183.000000)" fill="#1B0083">
+                <circle id="Oval" fill-opacity="0.2" cx="8" cy="26" r="8"></circle>
+                <circle id="Oval-Copy" fill-opacity="0.2" cx="48.5" cy="28.5" r="6.5"></circle>
+                <circle id="Oval-Copy-4" fill-opacity="0.2" cx="27.5" cy="25.5" r="10.5"></circle>
+                <circle id="Oval-46" fill-opacity="0.569999993" cx="38.5" cy="17.5" r="17.5"></circle>
+                <circle id="Oval" fill-opacity="0.4" cx="54.5" cy="23.5" r="10.5"></circle>
+                <circle id="Oval-45" fill-opacity="0.4" cx="21.5" cy="23.5" r="12.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
