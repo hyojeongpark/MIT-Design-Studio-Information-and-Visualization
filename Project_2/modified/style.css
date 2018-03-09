@@ -461,3 +461,7 @@ body {
 #mobile2 .barGraphContainer svg{
     margin: 0 auto;
 }
+
+.description ul {
+    cursor: pointer;
+}

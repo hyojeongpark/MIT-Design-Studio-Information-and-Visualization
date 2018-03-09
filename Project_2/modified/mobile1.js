@@ -75,40 +75,41 @@ function draw(data) {
     //background variations
 
     d3.select('#sunny').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile1.selectAll('.drop').remove();
+        mobile1.selectAll('.snow').remove();
         setBackground('sunny');
     })
+
     d3.select('#partly-cloudy').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile1.selectAll('.drop').remove();
+        mobile1.selectAll('.snow').remove();
         setBackground('partly-cloudy');
     })
     d3.select('#cloudy').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile1.selectAll('.drop').remove();
+        mobile1.selectAll('.snow').remove();
         setBackground('cloudy');
     })
     d3.select('#rainy').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile1.selectAll('.drop').remove();
+        mobile1.selectAll('.snow').remove();
         setBackground('rain');
     })
     d3.select('#snowy').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile1.selectAll('.drop').remove();
+        mobile1.selectAll('.snow').remove();
         setBackground('snow');
     })
 
     d3.select('#foggy').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile2.selectAll('.drop').remove();
+        mobile2.selectAll('.snow').remove();
         setBackground('fog');
     })
 
     d3.select('#default').on("click", function () {
-        d3.select(dom).selectAll('#drop').remove();
-        d3.select(dom).selectAll('#snow').remove();
+        mobile2.selectAll('.drop').remove();
+        mobile2.selectAll('.snow').remove();
         setBackground(data.currently.icon);
     })
 }
@@ -185,6 +186,8 @@ function setBackground(icon) {
 
     } else if (icon.includes('partly-cloudy')) {
         mobile1.select('.background').style('background', "url('./mobile1/clouds.png'), linear-gradient(to bottom, #4D2BFF, #56CEFF)");
+    } else {
+        mobile1.select('.background').style('background', "linear-gradient(to bottom, #4D2BFF, #56CEFF)");
     }
 }
 
