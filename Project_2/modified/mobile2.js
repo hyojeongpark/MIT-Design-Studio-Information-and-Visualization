@@ -5,7 +5,7 @@ function draw_mobile2(data) {
     var nowTime = new Date(data.currently.time * 1000);
     var todayTemp = data.currently.temperature;
 
-    mobile2.select('.todayTemp').text(Math.floor(todayTemp));
+    mobile2.select('.todayTemp').text(Math.round(todayTemp));
     setBigIcon('mobile2', data.currently.icon);
 
     mobile2.select('.c').on("click", function () {
@@ -13,7 +13,7 @@ function draw_mobile2(data) {
             mobile2.select('.f').text('°C');
             mobile2.select('.c').text('/F');
             mobile2.select('.todayTemp')
-                .text(Math.floor(fahrToCelc(todayTemp)));
+                .text(Math.round(fahrToCelc(todayTemp)));
             fahrenheit = false;
             addTemperature('mobile2', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -27,7 +27,7 @@ function draw_mobile2(data) {
             mobile2.select('.f').text('°F');
             mobile2.select('.c').text('/C');
             mobile2.select('.todayTemp')
-                .text(Math.floor(todayTemp));
+                .text(Math.round(todayTemp));
             fahrenheit = true;
             addTemperature('mobile2', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -79,7 +79,7 @@ function drawTempBars(dom, maxTemp, minTemp) {
         .append('span')
         .attr('class', 'barChartTemp')
         .attr('class', 'maxTemp')
-        .text(Math.floor(maxTemp));
+        .text(Math.round(maxTemp));
     d3.select(dom).select('.barGraphContainer').append('svg')
         .attr('class', 'barGraph')
         .attr('width', '10')
@@ -89,7 +89,7 @@ function drawTempBars(dom, maxTemp, minTemp) {
     d3.select(dom).select('.barGraphContainer').append('span')
         .attr('class', 'barChartTemp')
         .attr('class', 'minTemp')
-        .text(Math.floor(minTemp));
+        .text(Math.round(minTemp));
 }
 
 function setBigIcon(canvas, icon) {

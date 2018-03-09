@@ -31,14 +31,14 @@ function draw(data) {
     var fahrenheit = true;
     var nowTime = new Date(data.currently.time * 1000);
     var todayTemp = data.currently.temperature;
-    mobile1.select('.todayTemp').text(Math.floor(todayTemp));
+    mobile1.select('.todayTemp').text(Math.round(todayTemp));
 
     mobile1.select('.c').on("click", function () {
         if (mobile1.select('.c').text() === '/C') {
             mobile1.select('.f').text('°C');
             mobile1.select('.c').text('/F');
             mobile1.select('.todayTemp')
-                .text(Math.floor(fahrToCelc(todayTemp)));
+                .text(Math.round(fahrToCelc(todayTemp)));
 
             fahrenheit = false;
             addTemperature('mobile1', '.temp-now', data.currently, fahrenheit);
@@ -49,7 +49,8 @@ function draw(data) {
         } else {
             mobile1.select('.f').text('°F');
             mobile1.select('.c').text('/C');
-            mobile1.select('.todayTemp').text(Math.floor(todayTemp));
+            mobile1.select('.todayTemp')
+                .text(Math.round(todayTemp));
             fahrenheit = true;
             addTemperature('mobile1', '.temp-now', data.currently, fahrenheit);
             for (i = 1; i < tempDOM.length; i++) {
@@ -188,9 +189,9 @@ function addWeatherIcon(canvas, dom, node) {
 
 function addTemperature(canvas, dom, node, fahrenheit) {
     if (fahrenheit) {
-        d3.select('#' + canvas).select(dom).text(Math.floor(node.temperature) + '°F');
+        d3.select('#' + canvas).select(dom).text(Math.round(node.temperature) + '°F');
     } else {
-        d3.select('#' + canvas).select(dom).text(Math.floor(fahrToCelc(node.temperature)) + '°C');
+        d3.select('#' + canvas).select(dom).text(Math.round(fahrToCelc(node.temperature)) + '°C');
     }
 }
 
@@ -205,5 +206,5 @@ function fahrToCelc(fahrenheit) {
 
 // helper function to generate a random number range.
 function randRange(minNum, maxNum) {
-    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+    return (Math.round(Math.random() * (maxNum - minNum + 1)) + minNum);
 }
