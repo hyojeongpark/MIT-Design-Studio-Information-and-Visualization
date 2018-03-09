@@ -147,7 +147,7 @@ body {
     filter: blur(10px);
 }
 
-#mobile1 .svgFog{
+#mobile1 .svgFog {
     -webkit-backdrop-filter: blur(2px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
@@ -384,7 +384,7 @@ body {
 
 #mobile2 .content .times {
     display: flex;
-    padding-bottom: 0.55em;
+    padding-bottom: 2em;
     border-bottom: 0.1px solid #1B0083;
 }
 
@@ -440,14 +440,14 @@ body {
 
 #mobile2 .day {
     flex: 0 0 auto;
-    width: 60px;
+    width: 20%;
     position: relative;
 }
 
 #mobile2 .content h5 {
     font-weight: 300 !important;
     text-align: center;
-    margin: 0.7em 0 0.5em;
+    margin: 1.5em 0 1em;
 }
 
 #mobile2 .day-icon {
@@ -456,7 +456,6 @@ body {
 
 #mobile2 .barGraphContainer {
     text-align: center;
-    width: 0.5em;
     margin: 0 auto;
 }
 
@@ -472,6 +471,7 @@ body {
 #mobile2 .barGraphContainer .maxTemp {
     display: block;
     margin-top: -2em;
+    margin-bottom: 1em
 }
 
 #mobile2 .barGraphContainer svg {

@@ -79,9 +79,7 @@ function drawTempBars(dom, maxTemp, minTemp) {
         .append('span')
         .attr('class', 'barChartTemp')
         .attr('class', 'maxTemp')
-        .text(Math.floor(maxTemp))
-        .style('margin-bottom', '1em');
-
+        .text(Math.floor(maxTemp));
     d3.select(dom).select('.barGraphContainer').append('svg')
         .attr('class', 'barGraph')
         .attr('width', '10')
