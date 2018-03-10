@@ -2,6 +2,8 @@
 
 **Develop two visualizations of the current weather in Cambridge— one literal and one abstract — using three or more variables.**
 
+**Project Result: http://haleypark.design/MIT-Design-Studio-Information-and-Visualization/Project_2/**
+
 ## Goals
 
 - Learn the basics of HTTP requests and JSON formats
