@@ -48,6 +48,8 @@ function draw(error, data) {
         return new Date(d.time * 1000);
     });
 
+    console.log(extentTimeWeather);
+
     // data is until wednesday. We only want 24 hours --> filter data
     var todayNow = new Date().getTime() / 1000;
     var tomorrow = new Date().getTime() / 1000 + 24 * 3600;
@@ -82,8 +84,13 @@ function draw(error, data) {
 
 
     // 1.5 create AXIS
+
     var formatHours = d3.timeFormat("%H:00");
     var formatDate = d3.timeFormat("%A");
+
+    var formatHours = d3.timeFormat("%H:%M");
+    var formatDate = d3.timeFormat("%A");
+
 
     var axisHourX = d3.axisBottom().scale(scaleX1).ticks().tickFormat(formatHours),
         axisHourY = d3.axisLeft().scale(scaleY1).tickSizeInner(-width1).tickPadding([10]).ticks(5);
@@ -172,7 +179,7 @@ function draw(error, data) {
             return scaleY1(d.temperature);
         });
 
-    d3.select("#date").html(formatDate(extentdata24h[0]))
+    d3.select("#date").html(formatDate(extentdata24h[0]));
 
 
     //PLOT 2 - WEEKLY
@@ -206,9 +213,15 @@ function draw(error, data) {
     var scaleY2 = d3.scaleLinear().domain([minLowTemp - 5, maxHighTemp + 5]).range([height2, 0]);
 
     // 2.4 create groups to put the content inside them
-    plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + margin2.t + ')').attr('class', 'axis axis-y');
-    plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + (margin2.t + height1) + ')').attr('class', 'axis axis-x');
-    plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + margin2.t + ')').attr('class', 'weekWeather');
+    plot2.append('g')
+        .attr('transform', 'translate(' + margin2.l + ',' + margin2.t + ')')
+        .attr('class', 'axis axis-y');
+    plot2.append('g')
+        .attr('transform', 'translate(' + margin2.l + ',' + (margin2.t + height1) + ')')
+        .attr('class', 'axis axis-x');
+    plot2.append('g')
+        .attr('transform', 'translate(' + margin2.l + ',' + margin2.t + ')')
+        .attr('class', 'weekWeather');
 
 
     var plotLines = plot2.select('.weekWeather')
