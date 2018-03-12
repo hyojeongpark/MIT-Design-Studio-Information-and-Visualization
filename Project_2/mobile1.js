@@ -59,10 +59,7 @@ function draw(data) {
         }
     });
 
-    mobile1.select('.time-2').text(nowTime.getHours() + ':00');
-    mobile1.select('.time-1').text(nowTime.getHours() + 1 + ':00');
-    mobile1.select('.timePlus1').text(nowTime.getHours() + 2 + ':00');
-    mobile1.select('.timePlus2').text(nowTime.getHours() + 3 + ':00');
+    addTimes(mobile1, nowTime);
 
     addWeatherIcon('mobile1', '.weather-icon-now', data.currently);
     for (i = 1; i < iconDOM.length; i++) {
@@ -80,6 +77,13 @@ function draw(data) {
     d3.select('#default').on("click", function () {
         setBackground(data.currently.icon);
     });
+}
+
+function addTimes(dom, nowTime) {
+    dom.select('.time-2').text(nowTime.getHours() + ':00');
+    dom.select('.time-1').text((nowTime.getHours() + 1) % 24 + ':00');
+    dom.select('.timePlus1').text((nowTime.getHours() + 2) % 24 + ':00');
+    dom.select('.timePlus2').text((nowTime.getHours() + 3) % 24 + ':00');
 }
 
 function backgroundReset() {
@@ -146,7 +150,7 @@ function setBackground(icon) {
         } else if (icon == "fog") {
             mobile1.select('.background').classed("fog", true);
             mobile1.select('.dome').classed("svgFog", true);
-//            mobile1.select('.charles').classed("svgFog", true);
+            //            mobile1.select('.charles').classed("svgFog", true);
         }
 
     } else if (icon.includes('partly-cloudy')) {

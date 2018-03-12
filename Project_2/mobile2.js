@@ -21,8 +21,10 @@ function draw_mobile2(data) {
             }
 
             mobile2.selectAll('.day').each(function (i, e) {
-                drawTempBars(this, fahrToCelc(data.daily.data[e].temperatureMax), fahrToCelc(data.daily.data[e].temperatureMin));
+                drawTempBars(this, fahrToCelc(data.daily.data[e].temperatureMax), fahrToCelc(data.daily.data[e].temperatureMin), getMaxTempSevenDays(true));
             });
+            rangeCheck();
+
         } else {
             mobile2.select('.f').text('°F');
             mobile2.select('.c').text('/C');
@@ -30,19 +32,20 @@ function draw_mobile2(data) {
                 .text(Math.round(todayTemp));
             fahrenheit = true;
             addTemperature('mobile2', '.temp-now', data.currently, fahrenheit);
+
             for (i = 1; i < tempDOM.length; i++) {
                 addTemperature('mobile2', tempDOM[i], data.hourly.data[i - 1], fahrenheit);
             }
+
             mobile2.selectAll('.day').each(function (i, e) {
-                drawTempBars(this, data.daily.data[e].temperatureMax, data.daily.data[e].temperatureMin);
+                drawTempBars(this, data.daily.data[e].temperatureMax, data.daily.data[e].temperatureMin, getMaxTempSevenDays(false));
             });
+
+            rangeCheck();
         }
     });
 
-    mobile2.select('.time-2').text(nowTime.getHours() + ':00');
-    mobile2.select('.time-1').text(nowTime.getHours() + 1 + ':00');
-    mobile2.select('.timePlus1').text(nowTime.getHours() + 2 + ':00');
-    mobile2.select('.timePlus2').text((nowTime.getHours() + 3) + ':00');
+    addTimes(mobile2, nowTime);
 
     addWeatherIcon('mobile2', '.weather-icon-now', data.currently);
     for (i = 1; i < iconDOM.length; i++) {
@@ -64,18 +67,44 @@ function draw_mobile2(data) {
         d3.select(this).text(dayFormat(dayObj).slice(0, 3));
     });
 
+    var maxSevenDays = data.daily.data[0].temperatureMax;
+    for (i = 1; i < 7; i++) {
+        if (data.daily.data[i].temperatureMax > maxSevenDays) {
+            maxSevenDays = data.daily.data[i].temperatureMax;
+        }
+    }
     // draws bar graph
     mobile2.selectAll('.day').each(function (i, e) {
-        drawTempBars(this, data.daily.data[e].temperatureMax, data.daily.data[e].temperatureMin);
+        drawTempBars(this, data.daily.data[e].temperatureMax, data.daily.data[e].temperatureMin, maxSevenDays);
     });
+
+    rangeCheck();
+
+    function getMaxTempSevenDays(celcius) {
+        var maxSevenDays = data.daily.data[0].temperatureMax;
+
+        for (i = 1; i < 7; i++) {
+            if (data.daily.data[i].temperatureMax > maxSevenDays) {
+                maxSevenDays = data.daily.data[i].temperatureMax;
+            }
+        }
+
+        if (!celcius) {
+            return maxSevenDays;
+        } else {
+            return fahrToCelc(maxSevenDays);
+        }
+    }
 }
 
-function drawTempBars(dom, maxTemp, minTemp) {
+function drawTempBars(dom, maxTemp, minTemp, maxSevenDays) {
+    var padding = (maxSevenDays - maxTemp) * 5;
+
     d3.select(dom).select('.barGraphContainer').remove();
-    var height = (maxTemp - minTemp) * 4;
+    var height = (maxTemp - minTemp) * 5;
     d3.select(dom).append('div')
         .attr('class', 'barGraphContainer')
-        .style('padding-top', (120 - maxTemp) * 4 - 170 + 'px')
+        .style('padding-top', padding + 'px')
         .append('span')
         .attr('class', 'barChartTemp')
         .attr('class', 'maxTemp')
@@ -90,6 +119,31 @@ function drawTempBars(dom, maxTemp, minTemp) {
         .attr('class', 'barChartTemp')
         .attr('class', 'minTemp')
         .text(Math.round(minTemp));
+}
+
+function rangeCheck() {
+    var tooHigh = false;
+    var tooLow = false;
+    mobile2.selectAll('.barGraphContainer').each(function (i, e) {
+        var padding = parseFloat(d3.select(this).style("padding-top"));
+        if (padding < 40) {
+            tooHigh = true;
+        } else if (padding > 340) {
+            tooLow = true;
+        }
+    });
+
+    if (tooHigh) {
+        mobile2.selectAll('.barGraphContainer').each(function (i, e) {
+            var padding = parseFloat(d3.select(this).style("padding-top"));
+            d3.select(this).style("padding-top", (padding + 40) + 'px');
+        });
+    } else if (tooLow) {
+        mobile2.selectAll('.barGraphContainer').each(function (i, e) {
+            var padding = parseFloat(d3.select(this).style("padding-top"));
+            d3.select(this).style("padding-top", (padding - 150) + 'px');
+        });
+    }
 }
 
 function setBigIcon(canvas, icon) {
