@@ -31,9 +31,31 @@ var plot2 = d3.select('#plot2')
 
 // var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083'
 
+<<<<<<< HEAD
 d3.json("../data/boston_weather.json", draw);
 
 function draw(error, data) {
+=======
+$.ajax({
+    url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083',
+    dataType: 'JSONP',
+    type: 'GET',
+    crossDomain: true,
+    complete: function (json) {
+        if (json.readyState == '4' && json.status == '200') {
+            draw(json.responseJSON)
+        } else {
+            console.log("DATA FETCH FAILED")
+        }
+    }
+});
+
+// d3.json("../data/boston_weather.json",draw);
+
+function draw(data){
+
+    console.log(data)
+>>>>>>> upstream/master
 
     //PLOT 1 - today's weather
     var todayWeather = data.hourly.data;
