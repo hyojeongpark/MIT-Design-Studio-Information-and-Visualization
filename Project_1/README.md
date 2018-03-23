@@ -2,7 +2,7 @@
 
 **Sketch and develop 3 clock faces or displays of time, through an iterative process.**
 
-**Project Result: http://haleypark.design/MIT-Design-Studio-Information-and-Visualization/Project_1/**
+**Project Result: http://hyojeongpark.github.io/MIT-Design-Studio-Information-and-Visualization/Project_1/**
 
 ## Goals
 

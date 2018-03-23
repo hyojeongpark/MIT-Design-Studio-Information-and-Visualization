@@ -1,6 +1,10 @@
-
 //plot
-var margin = {t: 5, r: 25, b: 20, l: 25}; //this is an object
+var margin = {
+    t: 5,
+    r: 25,
+    b: 20,
+    l: 25
+}; //this is an object
 var width = d3.select('#plot1').node().clientWidth - margin.r - margin.l,
     height = d3.select('#plot1').node().clientHeight - margin.t - margin.b;
 
@@ -14,22 +18,26 @@ var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a 
 
 // queue data files, parse them and use them
 var queue = d3.queue()
-    .defer(d3.csv, "../data/data.csv", parseData)
-    .defer(d3.json, "../data/us_map.json") //downloaded from https://d3js.org/us-10m.v1.json
+    .defer(d3.csv, "data/data.csv", parseData)
+    .defer(d3.json, "data/us_map.json") //downloaded from https://d3js.org/us-10m.v1.json
     .await(dataloaded);
 
-function dataloaded (err,data,map){
+function dataloaded(err, data, map) {
 
     // get max and min values of data
-
+    var enrolledExtent = d3.extent(data, function (d) {
+        return d.total
+    });
     // scale Color for the map
 
     // Bind the data to the SVG and create one path per GeoJSON feature
 
 }
 
+function parseData(d) {
+    return {
+        id: +id[1],
+        state: d.state,
 
-
-function parseData(d){
-
+    }
 }
