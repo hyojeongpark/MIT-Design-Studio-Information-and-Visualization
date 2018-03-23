@@ -120,7 +120,11 @@ var plot2 = d3.select('#plot2') // if we select a html id #name, if we select a 
 
 d3.csv("../data/data.csv", parseData, drawData);
 
+<<<<<<< HEAD
 function parseData(d) {
+=======
+function parseData(d){
+>>>>>>> upstream/master
     return {
         year: +d.year,
         fruit: +d.fruit,

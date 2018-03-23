@@ -39,5 +39,16 @@ function parseData(d) {
         id: +id[1],
         state: d.state,
 
+<<<<<<< HEAD
     }
 }
+=======
+
+// total: +d["Total; Estimate; Population 3 years and over enrolled in school"],
+//     percentage: +d["Percent; Estimate; Population 3 years and over enrolled in school"]
+
+
+function parseData(d){
+
+}
+>>>>>>> upstream/master
