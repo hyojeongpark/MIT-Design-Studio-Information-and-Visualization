@@ -6,14 +6,13 @@ var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
 var iconDOM = ['.weather-icon-now', '.weather-icon-hrBefore2', '.weather-icon-hrBefore', '.weather-icon-hrAfter', '.weather-icon-hrAfter2'];
 var tempDOM = ['.temp-now', '.temp-1', '.temp-plus1', '.temp-plus2', '.temp-plus3'];
 
-//fetch the data
 var data = $.ajax({
     url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.373616,-71.109733',
     dataType: 'JSONP',
     type: 'GET',
     crossDomain: true,
     complete: function (data) {
-        if (data.readyState == '4' && data.status == '200') {
+        if (data.readyState === '4' && data.status === '200') {
             console.log(data.responseJSON);
             draw(data.responseJSON);
             draw_mobile2(data.responseJSON);
@@ -93,13 +92,15 @@ function backgroundReset() {
     mobile1.select('.dome').classed("svgFog", false);
     mobile1.select('.charles').classed("svgFog", false);
     mobile1.select('.dome').style('opacity', 1);
-    mobile1.select('.sun').style('opacity', 1);
+    mobile1.select('.sun')
+        .style('opacity', 1)
+        .style('background', 'linear-gradient(to bottom, #FF3B5D, rgb(255, 96, 133), rgba(255, 128, 133, 0.69), rgba(255, 182, 170, 0))');
 }
 
 function setBackground(icon) {
     backgroundReset();
 
-    if (icon == 'cloudy' || icon == 'snow' || icon == 'rain' || icon == "fog") {
+    if (icon === 'cloudy' || icon === 'snow' || icon === 'rain' || icon === "fog") {
         mobile1.select('.background').style('background', "url('./mobile1/foggy.png'), #000000").style('background-blend-mode', "hard-light");
 
         mobile1.select('.dome').style('opacity', 0.88);
@@ -109,7 +110,7 @@ function setBackground(icon) {
             .style('background', 'linear-gradient(rgba(14, 30, 75, 0.88), rgba(138, 156, 212, 0.88))')
             .style('mix-blend-mode', 'multiply');
 
-        if (icon == "rain") {
+        if (icon === "rain") {
             // Implemented from css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
             var nbDrop = 400; // number of drops created.
 
@@ -128,7 +129,7 @@ function setBackground(icon) {
             }
             createRain(); // Make it rain
 
-        } else if (icon == 'snow') {
+        } else if (icon === 'snow') {
             // Implemented from css rain created by raichu26. https://codepen.io/alemesre/pen/hAxGg
             var nbDrop = 500; // number of drops created.
 
@@ -142,19 +143,24 @@ function setBackground(icon) {
                         .attr('id', "snow" + i);
                     mobile1.select('#snow' + i)
                         .style('left', dropLeft + 'px')
-                        .style('top', dropTop + 'px');;
+                        .style('top', dropTop + 'px');
                 }
             }
             createSnow();
 
-        } else if (icon == "fog") {
+        } else if (icon === "fog") {
             mobile1.select('.background').classed("fog", true);
             mobile1.select('.dome').classed("svgFog", true);
-            //            mobile1.select('.charles').classed("svgFog", true);
         }
 
     } else if (icon.includes('partly-cloudy')) {
         mobile1.select('.background').style('background', "url('./mobile1/clouds.png'), linear-gradient(to bottom, #4D2BFF, #56CEFF)");
+    } else if (icon.includes('night')) {
+        mobile1.select('.background').style('background', "linear-gradient(to bottom, #001062, #d27dff, #feadbe)");
+        mobile1.select('.charles').select('.background')
+            .style('background', 'linear-gradient(rgba(14, 30, 75, 0.88), rgba(138, 156, 212, 0.88))')
+            .style('mix-blend-mode', 'multiply');
+        mobile1.select('.sun').style('background', 'linear-gradient(to bottom, #fff, rgba(250, 250, 250, 0.69), rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 0))');
     } else {
         mobile1.select('.background').style('background', "linear-gradient(to bottom, #4D2BFF, #56CEFF)");
     }
@@ -180,7 +186,7 @@ function addWeatherIcon(canvas, dom, node) {
         d3.select('#' + canvas).select(dom).append("img")
             .attr("src", canvas + "/rain.svg")
             .attr("width", 25);
-    } else if (node.icon == "fog") {
+    } else if (node.icon === "fog") {
         d3.select('#' + canvas).select(dom).append("img")
             .attr("src", canvas + "/fog.svg")
             .attr("height", 21);

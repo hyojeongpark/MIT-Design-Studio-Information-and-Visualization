@@ -1,6 +1,10 @@
-
 //plot
-var margin = {t: 5, r: 25, b: 20, l: 25}; //this is an object
+var margin = {
+    t: 5,
+    r: 25,
+    b: 20,
+    l: 25
+}; //this is an object
 var width = d3.select('#plot1').node().clientWidth - margin.r - margin.l,
     height = d3.select('#plot1').node().clientHeight - margin.t - margin.b;
 
@@ -24,44 +28,47 @@ var queue = d3.queue()
     .defer(d3.csv, "../data/population.csv", parsePopulation)
     .await(dataloaded);
 
-function dataloaded (err,data,map){
+function dataloaded(err, data, map) {
 
     console.log(populationPerState);
 
 
     // get max and min values of data
-    var enrolledExtent = d3.extent(data,function(d){return d.total});
+    var enrolledExtent = d3.extent(data, function (d) {
+        return d.total
+    });
 
     // get max and min values of data related to the total population of the State (per capita)
-    var enrolledPerCapitaExtent = d3.extent(data,function(d){
+    var enrolledPerCapitaExtent = d3.extent(data, function (d) {
         var id = +d.id.toString();
         var statePopulation = (populationPerState.get(id)).estimate2017;
-        return d.total/statePopulation});
+        return d.total / statePopulation
+    });
 
     console.log(enrolledPerCapitaExtent)
 
     // scale Color for the map
-    var scaleColor = d3.scaleLinear().range(["#ffc5c0","#ab0405"]).domain(enrolledPerCapitaExtent);
+    var scaleColor = d3.scaleLinear().range(["#ffc5c0", "#ab0405"]).domain(enrolledPerCapitaExtent);
 
     // Bind the data to the SVG and create one path per GeoJSON feature
     plot1.selectAll(".state")
-        .data(topojson.feature(map,map.objects.states).features) //geometry for the states
+        .data(topojson.feature(map, map.objects.states).features) //geometry for the states
         .enter()
         .append("path")
-        .attr("class","state")
+        .attr("class", "state")
         .attr("d", path)
         .style("stroke", "#fff")
         .style("stroke-width", "1")
-        .style("fill", function(d) {
+        .style("fill", function (d) {
             var mapID = +d.id;
             var color = "#f7f7f7"; //default color for those without information
 
             var statePopulation = (populationPerState.get(mapID)).estimate2017;
 
-            data.forEach(function(e){
-               if (mapID === e.id){
-                   color = scaleColor(e.total/statePopulation)
-               }
+            data.forEach(function (e) {
+                if (mapID === e.id) {
+                    color = scaleColor(e.total / statePopulation)
+                }
             });
 
             return color
@@ -72,9 +79,9 @@ function dataloaded (err,data,map){
 
 
 
-function parseData(d){
+function parseData(d) {
     var id = d.Id.split("US");
-    return{
+    return {
         id: +id[1],
         state: d.state,
         total: +d["Total; Estimate; Population 3 years and over enrolled in school"],
@@ -82,15 +89,15 @@ function parseData(d){
     }
 }
 
-function parsePopulation (d){
+function parsePopulation(d) {
     var id;
-    if (d.id!==""){
+    if (d.id !== "") {
         id = +d.id.split("US")[1];
-    }else{
+    } else {
         id = d["Geographic Area"];
     }
 
-    populationPerState.set (id, {
+    populationPerState.set(id, {
         state: d["Geographic Area"],
         april2010: +d["April 1, 2010, Census"],
         estimate2017: +d["Estimate 2017"],

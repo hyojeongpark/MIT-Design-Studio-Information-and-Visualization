@@ -201,7 +201,6 @@ body {
     }
 }
 
-
 #mobile1 .today,
 #mobile2 .today {
     text-transform: uppercase;
@@ -448,6 +447,7 @@ body {
     font-weight: 300 !important;
     text-align: center;
     margin: 1.5em 0 1em;
+    letter-spacing: 0.12em;
 }
 
 #mobile2 .day-icon {
