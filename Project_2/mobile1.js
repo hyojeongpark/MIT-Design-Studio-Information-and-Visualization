@@ -12,7 +12,7 @@ var data = $.ajax({
     type: 'GET',
     crossDomain: true,
     complete: function (data) {
-        if (data.readyState === '4' && data.status === '200') {
+        if (data.readyState == '4' && data.status == '200') {
             console.log(data.responseJSON);
             draw(data.responseJSON);
             draw_mobile2(data.responseJSON);

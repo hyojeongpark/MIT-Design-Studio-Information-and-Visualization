@@ -1,6 +1,10 @@
-
 //plot
-var margin = {t: 5, r: 25, b: 20, l: 50}; //this is an object
+var margin = {
+    t: 5,
+    r: 25,
+    b: 20,
+    l: 50
+}; //this is an object
 var width = d3.select('#plot1').node().clientWidth - margin.r - margin.l,
     height = d3.select('#plot1').node().clientHeight - margin.t - margin.b;
 
@@ -10,9 +14,13 @@ var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a 
     .attr('width', width + margin.r + margin.l)
     .attr('height', height + margin.t + margin.b);
 
-
 /// plot 2
-var margin2 = {t: 5, r: 25, b: 20, l: 50}; //this is an object
+var margin2 = {
+    t: 5,
+    r: 25,
+    b: 20,
+    l: 50
+}; //this is an object
 var width2 = d3.select('#plot2').node().clientWidth - margin2.r - margin2.l,
     height2 = d3.select('#plot2').node().clientHeight - margin2.t - margin2.b;
 
@@ -37,7 +45,7 @@ var queue = d3.queue()
     .defer(d3.csv, "../data/Households_by_total_money_income_by_race_age.csv", parseIncome)
     .await(dataloaded);
 
-function dataloaded (err,data,dataAge){
+function dataloaded(err, data, dataAge) {
 
     console.log(data);
 
@@ -49,74 +57,96 @@ function dataloaded (err,data,dataAge){
 
     // Y axis
     // 1 by total (region)
-    var maxTotalValueRegion = d3.max(nestedByMetric[2].values,function(d){
-        if (d.second_category === "Total"){
+    var maxTotalValueRegion = d3.max(nestedByMetric[2].values, function (d) {
+        if (d.second_category === "Total") {
             return d.total
         }
     });
 
     // (division)
-    var maxTotalValueDivision = d3.max(nestedByMetric[2].values,function(d){
-        if (d.second_category !== "Total"){
+    var maxTotalValueDivision = d3.max(nestedByMetric[2].values, function (d) {
+        if (d.second_category !== "Total") {
             return d.total
         }
     });
 
-    var scaleYPlot1 =  d3.scaleLinear().domain([0,maxTotalValueRegion]).rangeRound([height, 0]);
+    var scaleYPlot1 = d3.scaleLinear().domain([0, maxTotalValueRegion]).rangeRound([height, 0]);
 
     // X axis
     // regions
-    var mapRegions = (nestedByMetric[2].values).map(function(d){
-        if (d.second_category === "Total"){
+    var mapRegions = (nestedByMetric[2].values).map(function (d) {
+        if (d.second_category === "Total") {
             return d.first_category
         }
     });
 
-    mapRegions = mapRegions.filter(function(d){return d !== undefined});
+    mapRegions = mapRegions.filter(function (d) {
+        return d !== undefined
+    });
 
-    var mapDivisions = (nestedByMetric[2].values).map(function(d){
-        if (d.second_category !== "Total"){
+    var mapDivisions = (nestedByMetric[2].values).map(function (d) {
+        if (d.second_category !== "Total") {
             return d.second_category
         }
     });
 
-    mapDivisions = mapDivisions.filter(function(d){return d !== undefined});
+    mapDivisions = mapDivisions.filter(function (d) {
+        return d !== undefined
+    });
 
-    var scaleXPlot1 = d3.scaleBand().domain(mapRegions).rangeRound([0, width]).padding(0.5);
-    var scaleColors = d3.scaleOrdinal().domain(mapRegions).range([blue,yellow,red,green]);
+    var scaleXPlot1 = d3.scaleBand().domain(mapRegions)
+        .rangeRound([0, width])
+        .padding(0.5);
+
+    var scaleColors = d3.scaleOrdinal().domain(mapRegions)
+        .range([blue, yellow, red, green]);
 
     //create groups to put the content inside them
     plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + margin.t + ')').attr('class', 'axis axis-y');
-    plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + (margin.t+height) + ')').attr('class', 'axis axis-x');
+    plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + (margin.t + height) + ')').attr('class', 'axis axis-x');
     plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + margin.t + ')').attr('class', 'bars');
 
     //AXIS
     var axisBarChartX = d3.axisBottom().scale(scaleXPlot1).ticks(),
         axisBarChartY = d3.axisLeft().scale(scaleYPlot1).tickSizeInner(-width).tickPadding([5]).ticks(3);
 
-    var dataRegion = (nestedByMetric[2].values).filter(function(d){return d.second_category === "Total"});
-    var dataDivision = (nestedByMetric[2].values).filter(function(d){return d.second_category !== "Total"});
+    var dataRegion = (nestedByMetric[2].values).filter(function (d) {
+        return d.second_category === "Total"
+    });
+    var dataDivision = (nestedByMetric[2].values).filter(function (d) {
+        return d.second_category !== "Total"
+    });
 
     drawBarchart(dataRegion);
 
-    function drawPlot1 (_data){
+    function drawPlot1(_data) {
         plot1.select(".axis-x").transition().duration(1000).call(axisBarChartX);
         plot1.select(".axis-y").transition().duration(1000).call(axisBarChartY);
 
 
         var plotBars = plot1.select('.bars')
             .selectAll(".bar") //select a Bar that we will create in a few steps
-            .data(_data,function(d) { return d ? d.first_category : this.first_category; }); //select the data
+            .data(_data, function (d) {
+                return d ? d.first_category : this.first_category;
+            }); //select the data
 
         plotBars
-            .enter()//input the data
+            .enter() //input the data
             .append("rect")
             .attr("class", "bar") // this is the same class that we have selected before
-            .attr("x", function(d) {return scaleXPlot1(d.first_category); })
-            .attr("y", function(d) { return scaleYPlot1(d.total); })
+            .attr("x", function (d) {
+                return scaleXPlot1(d.first_category);
+            })
+            .attr("y", function (d) {
+                return scaleYPlot1(d.total);
+            })
             .attr("width", scaleXPlot1.bandwidth())
-            .attr("height", function(d) { return (height - scaleYPlot1(d.total)) })
-            .style("fill",function(d){return scaleColors(d.first_category)});
+            .attr("height", function (d) {
+                return (height - scaleYPlot1(d.total))
+            })
+            .style("fill", function (d) {
+                return scaleColors(d.first_category)
+            });
         //add mouseover event
     }
 
@@ -133,22 +163,37 @@ function dataloaded (err,data,dataAge){
 
     // plot 2
     var nestedByRace = d3.nest()
-        .key(function(d){return d.race})
-        .entries(dataAge.filter(function(d){return d.age_range !== "Mean age of householder"}));
+        .key(function (d) {
+            return d.race
+        })
+        .entries(dataAge.filter(function (d) {
+            return d.age_range !== "Mean age of householder"
+        }));
 
     // X axis
     // ages
-    var mapAges = (nestedByRace[0].values).map(function(d){return d.age_range});
+    var mapAges = (nestedByRace[0].values).map(function (d) {
+        return d.age_range
+    });
     var scaleXAge = d3.scaleBand().domain(mapAges).rangeRound([0, width2]).padding(0.5);
 
     // options that will update the data in the graph
-    var valuesPlot2 = [{value:"Member income",n:0},{value:"Median income",n:1},{value:"Mean income",n:2}];
+    var valuesPlot2 = [{
+        value: "Member income",
+        n: 0
+    }, {
+        value: "Median income",
+        n: 1
+    }, {
+        value: "Mean income",
+        n: 2
+    }];
 
     // append options to the html element
-    valuesPlot2.forEach(function(d){
+    valuesPlot2.forEach(function (d) {
         var plus = " (By household)";
 
-        if(d.value === "Member income"){
+        if (d.value === "Member income") {
             plus = " (By member)"
         }
         d3.select(".values-list")
@@ -161,25 +206,37 @@ function dataloaded (err,data,dataAge){
 
     // y axis
     // values
-    var maxMemberIncome = d3.max(dataAge,function(d){return d.member_income});
-    var maxMeanIncome = d3.max(dataAge,function(d){return d.mean_income});
-    var maxMedianIncome = d3.max(dataAge,function(d){return d.median_income});
-    var mapRaces = nestedByRace.map(function(d){return d.key});
+    var maxMemberIncome = d3.max(dataAge, function (d) {
+        return d.member_income
+    });
+    var maxMeanIncome = d3.max(dataAge, function (d) {
+        return d.mean_income
+    });
+    var maxMedianIncome = d3.max(dataAge, function (d) {
+        return d.median_income
+    });
+    var mapRaces = nestedByRace.map(function (d) {
+        return d.key
+    });
 
-    var scaleYAge =  d3.scaleLinear().domain([0,maxMemberIncome]).rangeRound([height, 0]);
-    var scaleColorAge = d3.scaleOrdinal().domain(mapRaces).range([blue,green,red,yellow,"#000"]);
+    var scaleYAge = d3.scaleLinear().domain([0, maxMemberIncome]).rangeRound([height, 0]);
+    var scaleColorAge = d3.scaleOrdinal().domain(mapRaces).range([blue, green, red, yellow, "#000"]);
 
     //function to create the line
     var lineAge = d3.line()
-        .x(function(d) {return scaleXAge(d.age_range); })
-        .y(function(d) { return scaleYAge(d.member_income); })
+        .x(function (d) {
+            return scaleXAge(d.age_range);
+        })
+        .y(function (d) {
+            return scaleYAge(d.member_income);
+        })
         .curve(d3.curveMonotoneX);
 
-    var distanceLine = width2/(mapAges.length * 4);
+    var distanceLine = width2 / (mapAges.length * 4);
 
     //create groups to put the content inside them
     plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + margin2.t + ')').attr('class', 'axis axis-y');
-    plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + (margin2.t+height2) + ')').attr('class', 'axis axis-x');
+    plot2.append('g').attr('transform', 'translate(' + margin2.l + ',' + (margin2.t + height2) + ')').attr('class', 'axis axis-x');
     plot2.append('g').attr('transform', 'translate(' + (margin2.l + distanceLine) + ',' + margin2.t + ')').attr('class', 'lines');
 
     //AXIS
@@ -193,29 +250,35 @@ function dataloaded (err,data,dataAge){
     // event that's called when html option changes
 
 
-    function drawPlot2(){
+    function drawPlot2() {
 
         plot2.select(".axis-x").transition().duration(1000).call(axisLineAgeX);
         plot2.select(".axis-y").transition().duration(1000).call(axisLineAgeY);
 
-        var plotAges =  plot2.select(".lines")
+        var plotAges = plot2.select(".lines")
             .selectAll(".line")
             .data(nestedByRace);
 
         plotAges
             .enter()
             .append("path")
-            .attr("class","line")
+            .attr("class", "line")
             .attr("fill", "none")
-            .attr("stroke", function(d){return scaleColorAge(d.key)})
+            .attr("stroke", function (d) {
+                return scaleColorAge(d.key)
+            })
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr("stroke-width", 3)
-            .attr("d", function(d){return lineAge(d.values)});
+            .attr("d", function (d) {
+                return lineAge(d.values)
+            });
 
         plotAges.exit().remove();
 
-        plotAges.transition().duration(1000).attr("d", function(d){return lineAge(d.values)});
+        plotAges.transition().duration(1000).attr("d", function (d) {
+            return lineAge(d.values)
+        });
 
     }
 
@@ -227,11 +290,9 @@ function dataloaded (err,data,dataAge){
 
 
 
-
-
 }
 
-function parseData(d){
+function parseData(d) {
 
     return {
         metric: d.Metric,
@@ -288,7 +349,7 @@ function parseData(d){
 
 
 
-function parseIncome(d){
+function parseIncome(d) {
 
     return {
         race: d.race,
@@ -299,4 +360,3 @@ function parseIncome(d){
         member_income: +d["Income per household member"],
     }
 }
-

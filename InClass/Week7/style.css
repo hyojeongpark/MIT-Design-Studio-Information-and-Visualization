@@ -1,16 +1,17 @@
 body {
     padding: 50px;
-    font-family: "HelveticaNeueLT Std","Helvetica LT Std Light", "Helvetica", "Arial", "sans-serif";
+    font-family: "HelveticaNeueLT Std", "Helvetica LT Std Light", "Helvetica", "Arial", "sans-serif";
 }
 
-h2{
+h2 {
     margin-bottom: 20px;
     margin-top: 50px;
 }
 
-#plot1, #plot2{
-    height:300px;
-    margin-bottom:50px;
+#plot1,
+#plot2 {
+    height: 300px;
+    margin-bottom: 50px;
 }
 
 .btn-default {
@@ -19,35 +20,35 @@ h2{
     margin-bottom: 40px;
 }
 
-.blue{
+.blue {
     color: #66b2c5;
 }
 
-.red{
+.red {
     color: #c63232
 }
 
-.green{
+.green {
     color: #72a746;
 }
 
-.yellow{
+.yellow {
     color: #ffb400
 }
 
 
-.legend p{
+.legend p {
     color: black
 }
 
-.legend{
-    float:left;
-    margin-left:20px;
+.legend {
+    float: left;
+    margin-left: 20px;
 }
 
-.tooltipBar{
+.tooltipBar {
     position: absolute;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     width: auto;
     margin: 0px;
@@ -55,21 +56,22 @@ h2{
     padding-bottom: 0px;
 }
 
-#numberBar{
+#numberBar {
     margin: 0px;
-    color:white;
+    color: white;
     font-weight: 500;
 }
 
 
-.axis-y .tick line  {
+.axis-y .tick line {
     stroke-width: 1px;
     shape-rendering: crispEdges;
     stroke: #e8eced;
 }
 
 
-.axis-x .tick line, .axis-x .tick path {
+.axis-x .tick line,
+.axis-x .tick path {
     stroke-width: 1px;
     stroke: black;
     shape-rendering: crispEdges;
@@ -79,11 +81,11 @@ h2{
     display: none;
 }
 
-.list-title{
+.list-title {
     font-size: 10pt;
 }
 
-.lists{
+.lists {
     margin-bottom: 30px;
     margin-top: -26px;
 
