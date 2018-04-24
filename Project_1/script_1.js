@@ -10,7 +10,7 @@ function addHour(currentDate) {
     return hour;
 }
 
-function setFontSize (hour) {
+function setFontSize(hour) {
     if (hour < 10) {
         document.getElementById("stroke").style.fontSize = '550px';
     }
@@ -24,9 +24,7 @@ function addFill(currentDate, hour) {
 function setHeight(currentDate) {
     var minutes = currentDate.getMinutes();
     console.log(minutes);
-    var strokeHeight = document.getElementById('stroke').clientHeight;
-
-    document.getElementById("fill").style.height = (minutes / 60 * 100) + '%';
+    d3.select("#fill").style("top", (minutes / 60 * 100) + "%");
 }
 
 function minute(currentDate) {

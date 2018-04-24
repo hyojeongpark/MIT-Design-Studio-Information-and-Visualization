@@ -5,7 +5,7 @@ function rgbDOM(currentDate) {
     var hour = currentDate.getHours();
     var minute = currentDate.getMinutes();
     var second = currentDate.getSeconds();
-    return '(' + hour + ', ' + minute + ', ' + second + ')';
+    return '(' + Math.floor(255 / 24 * hour) + ', ' + Math.floor(255 / 60 * minute) + ', ' + Math.floor(255 / 60 * second) + ')';
 }
 
 function circle() {
@@ -13,7 +13,7 @@ function circle() {
 }
 
 function circleColor(currentDate) {
-    document.getElementById("circle").style.backgroundColor = 'rgb' + rgbDOM(currentDate);
+    d3.select('#circle').style('background-color', 'rgb' + rgbDOM(currentDate));
 }
 
 function clock3() {
