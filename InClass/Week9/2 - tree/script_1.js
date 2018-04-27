@@ -1,6 +1,11 @@
-
 //plot
-var margin = {t: 40, r: 5, b: 40, l: 5}; //this is an object
+var margin = {
+    t: 40,
+    r: 5,
+    b: 40,
+    l: 5
+}; //this is an object
+
 var width = d3.select('#plot1').node().clientWidth - margin.r - margin.l,
     height = d3.select('#plot1').node().clientHeight - margin.t - margin.b;
 
@@ -14,10 +19,10 @@ var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a 
 var plotLink = plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + margin.t + ')').attr('class', 'tree link');
 var plotNode = plot1.append('g').attr('transform', 'translate(' + margin.l + ',' + margin.t + ')').attr('class', 'tree node');
 
-var plotCircles = plotNode.append("g").attr("class","circles");
-var plotNodeNames = plotNode.append("g").attr("class","nodeTitles");
-var plotNodeSubNames = plotNode.append("g").attr("class","nodeSubTitles");
-var plotNodeNumbers = plotNode.append("g").attr("class","nodeNumbers");
+var plotCircles = plotNode.append("g").attr("class", "circles");
+var plotNodeNames = plotNode.append("g").attr("class", "nodeTitles");
+var plotNodeSubNames = plotNode.append("g").attr("class", "nodeSubTitles");
+var plotNodeNumbers = plotNode.append("g").attr("class", "nodeNumbers");
 
 var formatNumber = d3.format(".2");
 var blue = "#66b2c5";
@@ -27,8 +32,10 @@ var green = "#72a746";
 
 //Layout function
 var treemap = d3.tree()
-    .size([width, height-200])
-    .separation(function(a, b) {return (a.parent == b.parent ? 1 : 2) / a.depth; });
+    .size([width, height - 200])
+    .separation(function (a, b) {
+        return (a.parent == b.parent ? 1 : 2) / a.depth;
+    });
 
 var visualizing = "race";
 
@@ -39,28 +46,38 @@ var queue = d3.queue()
 
     .await(dataloaded);
 
-function dataloaded (err,data){
+function dataloaded(err, data) {
 
     // data with which we're going to work
-    var filteredData = data.filter(function(d){return d.age_range !== "Mean age of householder"});
+    var filteredData = data.filter(function (d) {
+        return d.age_range !== "Mean age of householder"
+    });
 
-    var meanExtent = d3.extent(filteredData,function(d){return d.total});
-    var mean = d3.mean(filteredData,function(d){return d.total});
+    var meanExtent = d3.extent(filteredData, function (d) {
+        return d.total
+    });
+    var mean = d3.mean(filteredData, function (d) {
+        return d.total
+    });
 
-    var scaleStroke = d3.scaleLinear().domain(meanExtent).range([0.5,10]);
-    var scaleColor = d3.scaleLinear().domain([meanExtent[0],mean,meanExtent[1]]).range([red,yellow,blue]);
+    var scaleStroke = d3.scaleLinear().domain(meanExtent).range([0.5, 10]);
+    var scaleColor = d3.scaleLinear().domain([meanExtent[0], mean, meanExtent[1]]).range([red, yellow, blue]);
 
 
     // create structured data for hierarchy according to race
-    var nestedDataRace = d3.nest().key(function(d){return d.race}) // two main groups
+    var nestedDataRace = d3.nest().key(function (d) {
+            return d.race
+        }) // two main groups
         .entries(filteredData);
 
-    var depthRace = d3.max(nestedDataRace,function(d){return d.values.length});
+    var depthRace = d3.max(nestedDataRace, function (d) {
+        return d.values.length
+    });
 
     var rootRace = [];
     var rootsRace = [];
 
-    for(var i=0; i<nestedDataRace.length; i++){
+    for (var i = 0; i < nestedDataRace.length; i++) {
         var name = nestedDataRace[i].key;
         var children = nestedDataRace[i].values;
 
@@ -86,16 +103,20 @@ function dataloaded (err,data){
     var nodesRace = treemap(hierarchyRace);
 
     // create structured data according to age
-    var nestedDataAge = d3.nest().key(function(d){return d.age_range}) // two main groups
+    var nestedDataAge = d3.nest().key(function (d) {
+            return d.age_range
+        }) // two main groups
         .entries(filteredData);
 
-    var depthAge = d3.max(nestedDataAge,function(d){return d.values.length});
+    var depthAge = d3.max(nestedDataAge, function (d) {
+        return d.values.length
+    });
 
 
     var rootAge = [];
     var rootsAge = [];
 
-    for(var i=0; i<nestedDataAge.length; i++){
+    for (var i = 0; i < nestedDataAge.length; i++) {
         var name = nestedDataAge[i].key;
         var children = nestedDataAge[i].values;
 
@@ -123,7 +144,7 @@ function dataloaded (err,data){
     draw();
 
 
-    function draw(){
+    function draw() {
 
         //TODO Update chart depending on selected button
         var _nodes = nodesRace;
@@ -131,37 +152,41 @@ function dataloaded (err,data){
         // LINKS
         // adds the links between the nodes
         plotLink.selectAll(".link")
-            .data( _nodes.descendants().slice(1))
+            .data(_nodes.descendants().slice(1))
             .enter()
             .append("path")
             .attr("class", "link")
-            .attr("d", function(d) {
-                return "M" + d.x + "," + d.y
-                    + "C" + d.x + "," + (d.y + d.parent.y) / 2
-                    + " " + d.parent.x + "," +  (d.y + d.parent.y) / 2
-                    + " " + d.parent.x + "," + d.parent.y;
+            .attr("d", function (d) {
+                return "M" + d.x + "," + d.y +
+                    "C" + d.x + "," + (d.y + d.parent.y) / 2 +
+                    " " + d.parent.x + "," + (d.y + d.parent.y) / 2 +
+                    " " + d.parent.x + "," + d.parent.y;
             })
-            .style("fill","none")
-            .style("stroke",function(d){
+            .style("fill", "none")
+            .style("stroke", function (d) {
                 var value = 1;
-                if (d.data.total>0){
+                if (d.data.total > 0) {
                     value = d.data.total
-                }else{
-                    value = d3.mean(d.data.children,function(e){return e.total});
+                } else {
+                    value = d3.mean(d.data.children, function (e) {
+                        return e.total
+                    });
 
-                    if (d.depth===0){
+                    if (d.depth === 0) {
                         value = mean
                     }
                 }
                 return scaleColor(value)
             })
-            .style("stroke-width",function(d){
+            .style("stroke-width", function (d) {
                 var value = 1;
-                if (d.data.total>0){
+                if (d.data.total > 0) {
                     value = d.data.total
-                }else{
-                    value = d3.mean(d.data.children,function(e){return e.total});
-                    if (d.depth===0){
+                } else {
+                    value = d3.mean(d.data.children, function (e) {
+                        return e.total
+                    });
+                    if (d.depth === 0) {
                         value = mean
                     }
                 }
@@ -176,22 +201,26 @@ function dataloaded (err,data){
             .data(_nodes.descendants())
             .enter()
             .append("circle")
-            .attr("class", function(d) {
+            .attr("class", function (d) {
                 return "node" +
-                    (d.children ? " node--internal" : " node--leaf"); })
-            .attr("transform", function(d) {
-                return "translate(" + d.x + "," + d.y + ")"; })
+                    (d.children ? " node--internal" : " node--leaf");
+            })
+            .attr("transform", function (d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
             .attr("r", 5)
-            .style("fill","white")
-            .style("stroke-width",2)
-            .style("stroke",function(d){
+            .style("fill", "white")
+            .style("stroke-width", 2)
+            .style("stroke", function (d) {
                 var value = 1;
-                if (d.data.total>0){
+                if (d.data.total > 0) {
                     value = d.data.total
-                }else{
-                    value = d3.mean(d.data.children,function(e){return e.total});
+                } else {
+                    value = d3.mean(d.data.children, function (e) {
+                        return e.total
+                    });
 
-                    if (d.depth===0){
+                    if (d.depth === 0) {
                         value = mean
                     }
                 }
@@ -204,32 +233,37 @@ function dataloaded (err,data){
             .data(_nodes.descendants())
             .enter()
             .append("text")
-            .attr("class", function(d) {
+            .attr("class", function (d) {
                 return "nodeNames node" +
-                    (d.children ? " node--internal" : " node--leaf"); })
-            .attr("transform", function(d) {
+                    (d.children ? " node--internal" : " node--leaf");
+            })
+            .attr("transform", function (d) {
                 var value = "translate(" + d.x + "," + d.y + ")";
-                if (d.depth===2){
-                    value = "translate(" + (d.x+20) + "," + (d.y+40) + ")" + "rotate(90)"
+                if (d.depth === 2) {
+                    value = "translate(" + (d.x + 20) + "," + (d.y + 40) + ")" + "rotate(90)"
                 }
-                return value })
+                return value
+            })
             .attr("dy", ".35em")
-            .attr("y", function(d) { return d.children ? -35 : 20; })
-            .style("text-anchor", function(d){
-                if (d.depth<2){
+            .attr("y", function (d) {
+                return d.children ? -35 : 20;
+            })
+            .style("text-anchor", function (d) {
+                if (d.depth < 2) {
                     return "middle"
-                }else{
+                } else {
                     return "start"
                 }
             })
-            .text(function(d) {
+            .text(function (d) {
                 var value = d.data.name;
-                if (d.depth === 2 && visualizing === "race"){
+                if (d.depth === 2 && visualizing === "race") {
                     value = d.data.age_range
-                }else if (d.depth === 2 && visualizing === "age"){
+                } else if (d.depth === 2 && visualizing === "age") {
                     value = d.data.race
                 }
-                return value; });
+                return value;
+            });
 
 
         // adds the numbers to the node
@@ -237,34 +271,40 @@ function dataloaded (err,data){
             .data(_nodes.descendants())
             .enter()
             .append("text")
-            .attr("class", function(d) {
+            .attr("class", function (d) {
                 return "nodeValues node" +
-                    (d.children ? " node--internal" : " node--leaf"); })
-            .attr("transform", function(d) {
-                return "translate(" + d.x + "," + d.y + ")"; })
+                    (d.children ? " node--internal" : " node--leaf");
+            })
+            .attr("transform", function (d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
             .attr("dy", ".35em")
-            .attr("y", function(d) { return d.children ? -15 : 20; })
+            .attr("y", function (d) {
+                return d.children ? -15 : 20;
+            })
             .style("text-anchor", "middle")
-            .text(function(d){
+            .text(function (d) {
                 var value;
-                if (d.data.total>0){
+                if (d.data.total > 0) {
                     value = d.data.total
-                }else{
-                    value = d3.mean(d.data.children,function(e){return e.total});
-                    if (d.depth===0){
+                } else {
+                    value = d3.mean(d.data.children, function (e) {
+                        return e.total
+                    });
+                    if (d.depth === 0) {
                         value = mean
                     }
                 }
-                return formatNumber((value/1000))
+                return formatNumber((value / 1000))
             });
 
     }
 
 
-    d3.select("#race").on("click",function(){
+    d3.select("#race").on("click", function () {
 
     });
-    d3.select("#age").on("click",function(){
+    d3.select("#age").on("click", function () {
 
     });
 
@@ -273,7 +313,7 @@ function dataloaded (err,data){
 
 
 
-function parseIncome(d,i){
+function parseIncome(d, i) {
 
     return {
         race: d.race,
@@ -285,4 +325,3 @@ function parseIncome(d,i){
         // member_income: +d["Income per household member"],
     }
 }
-
